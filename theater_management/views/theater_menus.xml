@@ -1,0 +1,11 @@
+<odoo>
+
+    <menuitem id="theater_main_menu"
+              web_icon="theater_management/static/description/icon.png"
+              name="Theater Management" sequence="10"/>
+
+    <menuitem id="theater_main_menu"
+              parent="hr_hospital_main_menu"
+              name="Staff" sequence="30"/>
+
+</odoo>
