@@ -33,7 +33,11 @@ class TheaterArtist(models.Model):
         ('folk', 'Folk')
     ], help="Only for dancers")
 
-    # role_ids = fields.Many2many()
+    role_ids = fields.One2many(
+        comodel_name='theater.show.role',
+        inverse_name='artist_id',
+        string='Roles',
+    )
 
     joined_date = fields.Date(required=True)
 

@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="demo_theater_musician_vynnyk" model="theater.musician">
+            <field name="first_name">Oleg</field>
+            <field name="last_name">Vynnyk</field>
+            <field name="sex">male</field>
+            <field name="phone_number">0677770000</field>
+            <field name="birth_date">1973-07-31</field>
+            <field name="joined_date">1993-07-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="instrument_id" ref="theater_instrument_flute"/>
+
+
+
+        </record>
+
+    </data>
+</odoo>

@@ -12,8 +12,17 @@
         # "security/hr_hospital_groups.xml",
         "security/ir.model.access.csv",
         # "security/hr_hospital_security.xml",
-        "data/theater_musical_instruments.xml",
+        "data/theater_musical_instrument_data.xml",
+
         "views/theater_menus.xml",
+        "views/theater_musical_instrument_views.xml",
+        "views/theater_musician.xml",
+        "views/theater_artist.xml",
+        "views/theater_show_role.xml",
+    ],
+    'demo': [
+        "demo/theater_musician_demo.xml",
+        "demo/theater_artist_demo.xml",
     ],
 
     'images': ['static/description/banner.png', 'static/description/icon.png'],

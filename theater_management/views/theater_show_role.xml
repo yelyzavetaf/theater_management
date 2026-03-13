@@ -1,0 +1,56 @@
+<odoo>
+    <record id="theater_show_role_list" model="ir.ui.view">
+        <field name="name">theater.show.role.list</field>
+        <field name="model">theater.show.role</field>
+        <field name="arch" type="xml">
+            <list string="Show Roles" editable="bottom">
+                <field name="event_id" invisible="context.get('default_event_id')"/>
+                <field name="performer_type" widget="badge"
+                       decoration-info="performer_type == 'actor'"
+                       decoration-success="performer_type == 'dancer'"
+                       decoration-warning="performer_type == 'soloist'"/>
+                <field name="artist_id" options="{'no_create': True}"/>
+                <field name="role_name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="theater_show_role_form" model="ir.ui.view">
+        <field name="name">theater.show.role.form</field>
+        <field name="model">theater.show.role</field>
+        <field name="arch" type="xml">
+            <form string="Show Role Assignment">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="event_id" options="{'no_create': True}"/>
+                            <field name="performer_type"/>
+                        </group>
+                        <group>
+                            <field name="artist_id"
+                                   invisible="not performer_type"
+                                   options="{'no_create': True}"/>
+                            <field name="role_name"
+                                   invisible="not artist_id"/>
+                            <field name="description"
+                                   invisible="not role_name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_theater_show_roles_window" model="ir.actions.act_window">
+        <field name="name">Show Roles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">theater.show.role</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="theater_menu_musician"
+              action="action_theater_show_roles_window"
+              parent="theater_main_menu"
+              name="Show Roles" sequence="500"/>
+
+</odoo>

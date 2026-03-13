@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="demo_theater_artist_nazarenko" model="theater.artist">
+            <field name="first_name">Oleg</field>
+            <field name="last_name">Nazarenko</field>
+            <field name="sex">male</field>
+            <field name="phone_number">0679770000</field>
+            <field name="birth_date">1993-04-11</field>
+            <field name="joined_date">2005-07-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">soloist</field>
+
+
+
+        </record>
+
+    </data>
+
+</odoo>

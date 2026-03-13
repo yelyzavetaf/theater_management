@@ -6,7 +6,7 @@ from odoo.exceptions import ValidationError
 
 
 class TheaterMusicalInstrument(models.Model):
-    _name = 'theater.musical_instrument'
+    _name = 'theater.musical.instrument'
     _description = 'Musical Instrument'
     _order = 'name'
 
@@ -19,10 +19,22 @@ class TheaterMusicalInstrument(models.Model):
         ('keyboard', 'Keyboard')   # Клавішні
     ], required=True)
 
+    active = fields.Boolean(default=True)
+
     musician_ids = fields.One2many(
         comodel_name='theater.musician',
         inverse_name='instrument_id',
         string='Musicians',
     )
 
-    active = fields.Boolean(default=True)
+    number_of_musicians = fields.Integer(
+        string='Number of Musicians',
+        compute='_compute_number_of_musicians',
+        store=True
+    )
+
+    @api.depends('musician_ids')
+    def _compute_number_of_musicians(self):
+        for record in self:
+            record.number_of_musicians = len(record.musician_ids)
+

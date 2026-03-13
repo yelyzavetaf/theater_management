@@ -1,79 +1,79 @@
 <odoo>
     <data noupdate="1">
         <!-- Strings -->
-        <record id="theater_instrument_violin" model="theater.musical_instrument">
+        <record id="theater_instrument_violin" model="theater.musical.instrument">
             <field name="name">Violin</field>
             <field name="category">strings</field>
         </record>
-        <record id="theater_instrument_viola" model="theater.musical_instrument">
+        <record id="theater_instrument_viola" model="theater.musical.instrument">
             <field name="name">Viola</field>
             <field name="category">strings</field>
         </record>
-        <record id="theater_instrument_cello" model="theater.musical_instrument">
+        <record id="theater_instrument_cello" model="theater.musical.instrument">
             <field name="name">Cello</field>
             <field name="category">strings</field>
         </record>
-        <record id="theater_instrument_double_bass" model="theater.musical_instrument">
+        <record id="theater_instrument_double_bass" model="theater.musical.instrument">
             <field name="name">Double Bass</field>
             <field name="category">strings</field>
         </record>
-        <record id="theater_instrument_harp" model="theater.musical_instrument">
+        <record id="theater_instrument_harp" model="theater.musical.instrument">
             <field name="name">Harp</field>
             <field name="category">strings</field>
         </record>
 
         <!-- Woodwinds -->
-        <record id="theater_instrument_flute" model="theater.musical_instrument">
+        <record id="theater_instrument_flute" model="theater.musical.instrument">
             <field name="name">Flute</field>
             <field name="category">woodwinds</field>
         </record>
-        <record id="theater_instrument_oboe" model="theater.musical_instrument">
+        <record id="theater_instrument_oboe" model="theater.musical.instrument">
             <field name="name">Oboe</field>
             <field name="category">woodwinds</field>
         </record>
-        <record id="theater_instrument_clarinet" model="theater.musical_instrument">
+        <record id="theater_instrument_clarinet" model="theater.musical.instrument">
             <field name="name">Clarinet</field>
             <field name="category">woodwinds</field>
         </record>
-        <record id="theater_instrument_bassoon" model="theater.musical_instrument">
+        <record id="theater_instrument_bassoon" model="theater.musical.instrument">
             <field name="name">Bassoon</field>
             <field name="category">woodwinds</field>
         </record>
 
         <!-- Brass -->
-        <record id="theater_instrument_horn" model="theater.musical_instrument">
+        <record id="theater_instrument_horn" model="theater.musical.instrument">
             <field name="name">French Horn</field>
             <field name="category">brass</field>
         </record>
-        <record id="theater_instrument_trumpet" model="theater.musical_instrument">
+        <record id="theater_instrument_trumpet" model="theater.musical.instrument">
             <field name="name">Trumpet</field>
             <field name="category">brass</field>
         </record>
-        <record id="theater_instrument_trombone" model="theater.musical_instrument">
+        <record id="theater_instrument_trombone" model="theater.musical.instrument">
             <field name="name">Trombone</field>
             <field name="category">brass</field>
         </record>
-        <record id="theater_instrument_tuba" model="theater.musical_instrument">
+        <record id="theater_instrument_tuba" model="theater.musical.instrument">
             <field name="name">Tuba</field>
             <field name="category">brass</field>
         </record>
 
         <!-- Percussion -->
-        <record id="theater_instrument_timpani" model="theater.musical_instrument">
+        <record id="theater_instrument_timpani" model="theater.musical.instrument">
             <field name="name">Timpani</field>
             <field name="category">percussion</field>
         </record>
-        <record id="theater_instrument_snare_drum" model="theater.musical_instrument">
+        <record id="theater_instrument_snare_drum" model="theater.musical.instrument">
             <field name="name">Snare Drum</field>
             <field name="category">percussion</field>
         </record>
 
         <!-- Keyboard -->
-        <record id="theater_instrument_piano" model="theater.musical_instrument">
+        <record id="theater_instrument_piano" model="theater.musical.instrument">
             <field name="name">Grand Piano</field>
             <field name="category">keyboard</field>
         </record>
-        <record id="theater_instrument_celesta" model="theater.musical_instrument">
+        <record id="theater_instrument_celesta" model="theater.musical.instrument">
             <field name="name">Celesta</field>
             <field name="category">keyboard</field>
         </record>

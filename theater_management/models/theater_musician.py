@@ -20,7 +20,7 @@ class TheaterMusician(models.Model):
     )
 
     instrument_id = fields.Many2one(
-        comodel_name='theater.musical_instrument',
+        comodel_name='theater.musical.instrument',
         string='Musical instrument',
     )
 

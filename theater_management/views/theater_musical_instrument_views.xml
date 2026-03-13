@@ -1,8 +1,8 @@
 <odoo>
 
     <record id="view_theater_musical_instrument_list" model="ir.ui.view">
-        <field name="name">theater.musical_instrument.list</field>
-        <field name="model">theater.musical_instrument</field>
+        <field name="name">theater.musical.instrument.list</field>
+        <field name="model">theater.musical.instrument</field>
         <field name="arch" type="xml">
             <list string="Musical Instruments">
                 <field name="name"/>
@@ -11,18 +11,17 @@
                        decoration-success="category == 'woodwinds'"
                        decoration-warning="category == 'brass'"
                        decoration-danger="category == 'percussion'"/>
-                <field name="active" widget="boolean_toggle"/>
+                <field name="number_of_musicians"/>
             </list>
         </field>
     </record>
 
     <record id="view_theater_musical_instrument_form" model="ir.ui.view">
-        <field name="name">theater.musical_instrument.form</field>
-        <field name="model">theater.musical_instrument</field>
+        <field name="name">theater.musical.instrument.form</field>
+        <field name="model">theater.musical.instrument</field>
         <field name="arch" type="xml">
             <form string="Musical Instrument">
                 <sheet>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active"/>
 
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
@@ -34,16 +33,16 @@
                     <group>
                         <group>
                             <field name="category"/>
-                            <field name="active" invisible="1"/>
+                            <field name="number_of_musicians"/>
                         </group>
                     </group>
 
                     <notebook>
                         <page string="Musicians" name="musicians">
                             <field name="musician_ids">
-                                <list editable="bottom">
+                                <list>
                                     <field name="full_name"/>
-                                    <!-- Додайте інші поля моделі theater.musician, якщо вони є -->
+                                    <field name="experience"/>
                                 </list>
                             </field>
                         </page>
@@ -54,21 +53,24 @@
     </record>
 
     <record id="view_theater_musical_instrument_search" model="ir.ui.view">
-        <field name="name">theater.musical_instrument.search</field>
-        <field name="model">theater.musical_instrument</field>
+        <field name="name">theater.musical.instrument.search</field>
+        <field name="model">theater.musical.instrument</field>
         <field name="arch" type="xml">
             <search string="Search Instruments">
                 <field name="name"/>
                 <field name="category"/>
-                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
-                <group expand="0" string="Group By">
-                    <filter string="Category" name="group_by_category" context="{'group_by': 'category'}"/>
-                </group>
             </search>
         </field>
     </record>
 
-    <menuitem id="hr_hospital_menu_doctor"
+    <record id="action_theater_musical_instrument_window" model="ir.actions.act_window">
+            <field name="name">Musical Instruments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">theater.musical.instrument</field>
+            <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="theater_menu_musical_instrument"
               action="action_theater_musical_instrument_window"
               parent="theater_main_menu"
               name="Musical Instruments" sequence="300"/>
