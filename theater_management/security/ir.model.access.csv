@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_theater_artist,access_theater_artist,model_theater_artist,base.group_user,1,1,1,1
 access_theater_musical_instrument,access_theater_musical_instrument,model_theater_musical_instrument,base.group_user,1,1,1,1
 access_theater_musician,access_theater_musician,model_theater_musician,base.group_user,1,1,1,1
+access_theater_show_role,access_theater_show_role,model_theater_show_role,base.group_user,1,1,1,1
+access_theater_show_orchestra,access_theater_show_orchestra,model_theater_show_orchestra,base.group_user,1,1,1,1

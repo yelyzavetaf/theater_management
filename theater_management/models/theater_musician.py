@@ -32,6 +32,11 @@ class TheaterMusician(models.Model):
         readonly=True,
     )
 
+    orchestra_ids = fields.One2many(
+        comodel_name='theater.show.orchestra',
+        inverse_name='musician_id',
+    )
+
     @api.depends('full_name')
     def _compute_display_name(self):
         """

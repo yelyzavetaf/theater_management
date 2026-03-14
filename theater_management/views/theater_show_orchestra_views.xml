@@ -1,0 +1,44 @@
+<odoo>
+    <record id="theater_show_orchestra_list" model="ir.ui.view">
+        <field name="name">theater.show.orchestra.list</field>
+        <field name="model">theater.show.orchestra</field>
+        <field name="arch" type="xml">
+            <list string="Show Orchestra" >
+                <field name="event_ids" invisible="context.get('default_event_id')"/>
+                <field name="instrument_id" />
+                <field name="musician_id" options="{'no_create': True}"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="theater_show_orchestra_form" model="ir.ui.view">
+        <field name="name">theater.show.orchestra.form</field>
+        <field name="model">theater.show.orchestra</field>
+        <field name="arch" type="xml">
+            <form string="Show Orchestra Assignment">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="event_ids" options="{'no_create': True}"/>
+                            <field name="instrument_id"/>
+                            <field name="musician_id" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_theater_show_orchestra_window" model="ir.actions.act_window">
+        <field name="name">Show Orchestra</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">theater.show.orchestra</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="theater_menu_show_orchestra"
+              action="action_theater_show_orchestra_window"
+              parent="theater_main_menu"
+              name="Show Orchestra" sequence="501"/>
+
+</odoo>

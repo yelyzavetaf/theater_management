@@ -5,9 +5,9 @@ class TheaterShowRole(models.Model):
     _name = 'theater.show.role'
     _description = 'Show Role Assignment'
 
-    event_id = fields.Many2one(comodel_name='event.event', string="Show/Event", ondelete='cascade')
+    event_ids = fields.Many2many(comodel_name='event.event', string="Show/Event", ondelete='cascade')
 
-    role_name = fields.Char(string="Specific Role", placeholder="e.g. Hamlet, Lead Dancer")
+    role_name = fields.Char(string="Specific Role", required=True)
     performer_type = fields.Selection([
         ('actor', 'Actor/Actress'),
         ('dancer', 'Dancer'),
@@ -19,7 +19,9 @@ class TheaterShowRole(models.Model):
     artist_id = fields.Many2one(
         comodel_name='theater.artist',
         string="Artist",
-        domain="[('performer_type', '=', performer_type)]")
+        domain="[('performer_type', '=', performer_type)]",
+        required=True,
+    )
 
     description = fields.Char()
 
@@ -27,3 +29,10 @@ class TheaterShowRole(models.Model):
     @api.onchange('performer_type')
     def _onchange_performer_type(self):
         self.artist_id = False
+
+
+    @api.depends('artist_id', 'role_name')
+    def _compute_display_name(self):
+        for record in self:
+                name = f"{record.role_name} ({record.artist_id})"
+                record.display_name = name

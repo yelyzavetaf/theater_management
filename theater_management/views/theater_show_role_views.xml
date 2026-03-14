@@ -3,8 +3,8 @@
         <field name="name">theater.show.role.list</field>
         <field name="model">theater.show.role</field>
         <field name="arch" type="xml">
-            <list string="Show Roles" editable="bottom">
-                <field name="event_id" invisible="context.get('default_event_id')"/>
+            <list string="Show Roles" >
+                <field name="event_ids" invisible="context.get('default_event_id')"/>
                 <field name="performer_type" widget="badge"
                        decoration-info="performer_type == 'actor'"
                        decoration-success="performer_type == 'dancer'"
@@ -23,7 +23,7 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="event_id" options="{'no_create': True}"/>
+                            <field name="event_ids" options="{'no_create': True}"/>
                             <field name="performer_type"/>
                         </group>
                         <group>
@@ -48,7 +48,7 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="theater_menu_musician"
+    <menuitem id="theater_menu_show_role"
               action="action_theater_show_roles_window"
               parent="theater_main_menu"
               name="Show Roles" sequence="500"/>

@@ -1,22 +1,22 @@
 <odoo>
 
-    <record id="theater_artist_list" model="ir.ui.view">
-        <field name="name">theater.artist.list ()</field>
-        <field name="model">theater.artist</field>
+    <record id="theater_musician_list" model="ir.ui.view">
+        <field name="name">theater.musician.list ()</field>
+        <field name="model">theater.musician</field>
         <field name="arch" type="xml">
-            <list string="Artists">
+            <list string="Musicians">
                 <field name="full_name"/>
                 <field name="sex" optional="hide"/>
                 <field name="age" optional="hide"/>
-                <field name="performer_type"/>
+                <field name="instrument_id"/>
                 <field name="experience" optional="hide"/>
             </list>
         </field>
     </record>
 
-    <record id="theater_artist_form" model="ir.ui.view">
-        <field name="name">theater.artist.form</field>
-        <field name="model">theater.artist</field>
+    <record id="theater_musician_form" model="ir.ui.view">
+        <field name="name">theater.musician.form</field>
+        <field name="model">theater.musician</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -35,10 +35,8 @@
                             <field name="age"/>
                             <field name="joined_date"/>
                             <field name="experience"/>
-                            <field name="performer_type"/>
-                            <field name="dance_style"
-                                   invisible="performer_type != 'dancer'"
-                                   required="performer_type == 'dancer'"/>
+                            <field name="instrument_id"/>
+                            <field name="orchestra_ids"/>
 
                         </group>
                         <group string="Contact information">
@@ -79,26 +77,31 @@
         </field>
     </record>
 
-        <record id="theater_artist_search" model="ir.ui.view">
-            <field name="name">theater.artist.search</field>
-            <field name="model">theater.artist</field>
-            <field name="arch" type="xml">
-                <search string="Search artist">
-                    <field name="full_name" string="Artist's Name" filter_domain="[('full_name', 'ilike', self)]"/>
-                </search>
-            </field>
-        </record>
+    <record id="theater_musician_search" model="ir.ui.view">
+        <field name="name">theater.musician.search</field>
+        <field name="model">theater.musician</field>
+        <field name="arch" type="xml">
+            <search string="Search musician">
+                <field name="full_name" string="Musician's Name" filter_domain="[('full_name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
 
-        <record id="action_theater_artist_window" model="ir.actions.act_window">
-            <field name="name">Artist</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">theater.artist</field>
-            <field name="view_mode">list,form</field>
-        </record>
+    <record id="action_theater_musician_window" model="ir.actions.act_window">
+        <field name="name">Musician</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">theater.musician</field>
+        <field name="view_mode">list,form</field>
+    </record>
 
-        <menuitem id="theater_menu_artist"
-                  action="action_theater_artist_window"
-                  parent="theater_menu_staff"
-                  name="Artists" sequence="300"/>
+
+
+    <menuitem id="theater_menu_musician"
+              action="action_theater_musician_window"
+              parent="theater_menu_staff"
+              name="Musicians" sequence="300"/>
+
+
+
 
 </odoo>

@@ -16,9 +16,10 @@
 
         "views/theater_menus.xml",
         "views/theater_musical_instrument_views.xml",
-        "views/theater_musician.xml",
-        "views/theater_artist.xml",
-        "views/theater_show_role.xml",
+        "views/theater_musician_views.xml",
+        "views/theater_artist_views.xml",
+        "views/theater_show_role_views.xml",
+        "views/theater_show_orchestra_views.xml",
     ],
     'demo': [
         "demo/theater_musician_demo.xml",
