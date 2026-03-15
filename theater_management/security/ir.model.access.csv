@@ -4,3 +4,4 @@ access_theater_musical_instrument,access_theater_musical_instrument,model_theate
 access_theater_musician,access_theater_musician,model_theater_musician,base.group_user,1,1,1,1
 access_theater_show_role,access_theater_show_role,model_theater_show_role,base.group_user,1,1,1,1
 access_theater_show_orchestra,access_theater_show_orchestra,model_theater_show_orchestra,base.group_user,1,1,1,1
+access_theater_event,access_theater_event,model_event_event,base.group_user,1,1,1,1

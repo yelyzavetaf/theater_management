@@ -8,4 +8,9 @@
               parent="theater_main_menu"
               name="Staff" sequence="30"/>
 
+    <menuitem id="theater_menu_planning"
+              name="Planning"
+              parent="theater_main_menu"
+              sequence="20"/>
+
 </odoo>

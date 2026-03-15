@@ -50,7 +50,7 @@
 
     <menuitem id="theater_menu_show_role"
               action="action_theater_show_roles_window"
-              parent="theater_main_menu"
+              parent="theater_menu_planning"
               name="Show Roles" sequence="500"/>
 
 </odoo>

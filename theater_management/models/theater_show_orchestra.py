@@ -10,7 +10,7 @@ class TheaterShowOrchestra(models.Model):
     _name = 'theater.show.orchestra'
     _description = 'Orchestra Assignment'
 
-    event_ids = fields.Many2many(comodel_name='event.event', string="Show", ondelete='cascade')
+    event_ids = fields.Many2many(comodel_name='event.event', string="Show", ondelete='cascade', relation='event_show_orchestra_rel')
 
     # Поле для вибору інструмента (щоб потім відфільтрувати музикантів)
     instrument_id = fields.Many2one(comodel_name='theater.musical.instrument', string="Instrument", required=True)

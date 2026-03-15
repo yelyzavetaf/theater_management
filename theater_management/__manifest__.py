@@ -20,6 +20,7 @@
         "views/theater_artist_views.xml",
         "views/theater_show_role_views.xml",
         "views/theater_show_orchestra_views.xml",
+        "views/theater_event_views.xml",
     ],
     'demo': [
         "demo/theater_musician_demo.xml",

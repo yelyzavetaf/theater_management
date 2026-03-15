@@ -38,7 +38,7 @@
 
     <menuitem id="theater_menu_show_orchestra"
               action="action_theater_show_orchestra_window"
-              parent="theater_main_menu"
+              parent="theater_menu_planning"
               name="Show Orchestra" sequence="501"/>
 
 </odoo>
