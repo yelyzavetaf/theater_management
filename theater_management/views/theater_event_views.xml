@@ -4,6 +4,11 @@
         <field name="model">event.event</field>
         <field name="inherit_id" ref="event.view_event_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <!-- Це поле автоматично оновить фонову картинку на сайті -->
+                <field name="image_1920" widget="image" class="oe_avatar"
+                       options="{'preview_image': 'image_128'}"/>
+            </xpath>
             <!-- Додаємо вибір типу у верхню частину форми -->
 <!--            <xpath expr="//field[@name='date_end']" position="after">-->
 <!--                <field name="event_type_selection" widget="radio" options="{'horizontal': true}"/>-->
@@ -27,14 +32,19 @@
                 <group string="Theater Logistics" >
                     <field name="has_actors" widget="boolean_toggle"/>
                     <field name="has_orchestra" widget="boolean_toggle"/>
+
+<!--                    <field name="image_1920" widget="image" class="oe_avatar"-->
+<!--                        options="{'preview_image': 'image_128'}"/>-->
                 </group>
             </xpath>
-
+<!--            <xpath expr="//field[@name='name']" position="before">-->
+<!--                <field name="kanban_image" widget="image" class="oe_avatar"/>-->
+<!--            </xpath>-->
 
             <xpath expr="//notebook" position="inside">
             <!-- Вкладка Актори: видима тільки якщо це НЕ репетиція ТА стоїть галочка has_actors -->
             <page string="Cast &amp; Roles" name="theater_cast"
-                  invisible="event_type_selection == 'rehearsal' or not has_actors">
+                  invisible="not has_actors">
                 <field name="show_role_ids">
                     <list editable="bottom">
                         <field name="performer_type"/>

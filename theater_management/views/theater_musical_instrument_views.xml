@@ -72,7 +72,7 @@
 
     <menuitem id="theater_menu_musical_instrument"
               action="action_theater_musical_instrument_window"
-              parent="theater_main_menu"
-              name="Musical Instruments" sequence="300"/>
+              parent="theater_menu_planning"
+              name="Musical Instruments" sequence="502"/>
 
 </odoo>

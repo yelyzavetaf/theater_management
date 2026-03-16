@@ -1,21 +1,26 @@
 from odoo import models, fields, api
 
 
-class TheaterEvent(models.Model):
-    _inherit = 'event.event'
+class Event(models.Model):
+    _name = 'event.event'
+    _inherit = ['event.event', 'image.mixin']
 
     has_orchestra = fields.Boolean(string="With Orchestra", default=True)
     has_actors = fields.Boolean(string="With Actors", default=True)
 
     show_role_ids = fields.Many2many(
         comodel_name='theater.show.role',
-        relation='event_show_role_rel', # назва таблиці зв'язку
+        relation='event_show_role_rel',
+        column1='event_id',
+        column2='role_id',
         string="Cast"
     )
 
     orchestra_ids = fields.Many2many(
         comodel_name='theater.show.orchestra',
         relation='event_show_orchestra_rel',
+        column1='event_id',
+        column2='orc_id',
         string="Orchestra"
     )
 
@@ -27,7 +32,7 @@ class TheaterEvent(models.Model):
     @api.onchange('event_type_selection')
     def _onchange_event_type_selection(self):
         if self.event_type_selection == 'rehearsal':
-            # Очищуємо список квитків, якщо це репетиція
+            # Remove tickets if it's a rehearsal
             self.event_ticket_ids = [(5, 0, 0)]
 
     @api.onchange('has_actors')

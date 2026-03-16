@@ -6,7 +6,7 @@
     'category': 'Extra Tools',
     'summary': 'Allows to track shows and actors',
     "license": "OPL-1",
-    'depends': ['base', 'event'],
+    'depends': ['base', 'event', 'website_event'],
 
     'data': [
         # "security/hr_hospital_groups.xml",

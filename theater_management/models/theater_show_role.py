@@ -5,7 +5,7 @@ class TheaterShowRole(models.Model):
     _name = 'theater.show.role'
     _description = 'Show Role Assignment'
 
-    event_ids = fields.Many2many(comodel_name='event.event', string="Show/Event", ondelete='cascade', relation='event_show_role_rel')
+    event_id = fields.Many2many(comodel_name='event.event', string="Show/Event")
 
     role_name = fields.Char(string="Specific Role", required=True)
     performer_type = fields.Selection([
