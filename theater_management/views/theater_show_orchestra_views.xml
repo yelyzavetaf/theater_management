@@ -4,9 +4,12 @@
         <field name="model">theater.show.orchestra</field>
         <field name="arch" type="xml">
             <list string="Show Orchestra" >
-                <field name="event_id" invisible="context.get('default_event_id')"/>
                 <field name="instrument_id" />
                 <field name="musician_id" options="{'no_create': True}"/>
+                <field name="event_id"
+                       invisible="context.get('default_event_id')"
+                       widget="many2many_tags"
+                       options="{'no_create': True}"/>
             </list>
         </field>
     </record>

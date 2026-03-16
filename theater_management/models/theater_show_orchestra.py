@@ -2,8 +2,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 
 from odoo import _, api, models, fields
-
-from odoo.exceptions import UserError, ValidationError
+from odoo.exceptions import ValidationError
 
 
 class TheaterShowOrchestra(models.Model):
@@ -42,3 +41,15 @@ class TheaterShowOrchestra(models.Model):
                 record.display_name = name
             else:
                 record.display_name = "New Assignment"
+
+    @api.constrains('musician_id', 'event_id')
+    def _check_unique_musician_per_event(self):
+        for record in self:
+            for event in record.event_id:
+                duplicates = event.orchestra_ids.filtered(
+                    lambda m: m.musician_id == record.musician_id and m.id != record.id
+                )
+                if duplicates:
+                    raise ValidationError(_(
+                        "Musician %s is already added to thee orchestra of this event!"
+                    ) % record.musician_id.full_name)

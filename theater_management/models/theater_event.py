@@ -30,11 +30,13 @@ class Event(models.Model):
         ('rehearsal', 'Rehearsal')
     ], string="Тип події", default='show', required=True)
 
+    details = fields.Text()
+
     description = fields.Html(
         compute='_compute_description',
         store=True,
         readonly=False,
-        render_engine='qweb'  # Для Odoo 19
+        render_engine='qweb'
     )
 
     def _update_cover_image(self):
@@ -89,9 +91,11 @@ class Event(models.Model):
     @api.depends('show_role_ids', 'orchestra_ids', 'event_type_selection', 'has_actors', 'has_orchestra')
     def _compute_description(self):
         for record in self:
-            # Початковий HTML блок
             label = "Rehearsal" if record.event_type_selection == 'rehearsal' else "Show"
             html = f"<section class='s_text_block pb32 pt32'><h3>{label}</h3>"
+
+            if record.details:
+                html += f"<p>{record.details}</p>"
 
             # Adding actors
             if record.has_actors and record.show_role_ids:

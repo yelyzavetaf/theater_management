@@ -50,32 +50,19 @@
                             <field name="language_id"/>
                         </group>
                     </group>
-<!--                        <notebook>-->
-<!--                            <page name="diagnosis_history" string="Diagnoses history">-->
-<!--                                <field name="diagnosis_ids">-->
-<!--                                    <list create="0" edit="0" delete="0">-->
-<!--                                        <field name="disease_id"/>-->
-<!--                                        <field name="description"/>-->
-<!--                                        <field name="approved"/>-->
-<!--                                        <field name="approved_by" optional="hide"/>-->
-<!--                                        <field name="approved_date" optional="hide"/>-->
-<!--                                        <field name="severity"/>-->
-<!--                                    </list>-->
-<!--                                </field>-->
-<!--                            </page>-->
+                    <notebook>
+                        <page name="events_history_artist" string="Events history">
+                            <field name="role_ids">
+                                <list>
+                                    <field name="event_id"/>
+<!--                                    <field name="event_id.date_begin"/>-->
+                                    <field name="performer_type"/>
+                                    <field name="role_name"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
 
-<!--                            <page name="doctors_history" string="Doctors history">-->
-<!--                                <field name="doctor_history_ids" context="{'active_test': False}">-->
-<!--                                    <list create="0" edit="0" delete="0">-->
-<!--                                        <field name="doctor_history_id"/>-->
-<!--                                        <field name="active" column_invisible="True"/>-->
-<!--                                        <field name="assigned_date"/>-->
-<!--                                        <field name="reassigned_date"/>-->
-<!--                                        <field name="reassigned_reason" optional="show"/>-->
-<!--                                    </list>-->
-<!--                                </field>-->
-<!--                            </page>-->
-<!--                        </notebook>-->
                 </sheet>
             </form>
         </field>

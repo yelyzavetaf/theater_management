@@ -4,13 +4,16 @@
         <field name="model">theater.show.role</field>
         <field name="arch" type="xml">
             <list string="Show Roles" >
-                <field name="event_id" invisible="context.get('default_event_id')"/>
                 <field name="performer_type" widget="badge"
                        decoration-info="performer_type == 'actor'"
                        decoration-success="performer_type == 'dancer'"
                        decoration-warning="performer_type == 'soloist'"/>
                 <field name="artist_id" options="{'no_create': True}"/>
                 <field name="role_name"/>
+                <field name="event_id"
+                       invisible="context.get('default_event_id')"
+                       widget="many2many_tags"
+                       options="{'no_create': True}"/>
             </list>
         </field>
     </record>

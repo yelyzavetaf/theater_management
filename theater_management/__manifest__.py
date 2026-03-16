@@ -13,6 +13,7 @@
         "security/ir.model.access.csv",
         # "security/hr_hospital_security.xml",
         "data/theater_musical_instrument_data.xml",
+        "data/theater_event_tags_data.xml",
 
         "views/theater_menus.xml",
         "views/theater_musical_instrument_views.xml",

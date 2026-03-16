@@ -1,4 +1,5 @@
-from odoo import api, models, fields
+from odoo import _, api, models, fields
+from odoo.exceptions import ValidationError
 
 
 class TheaterShowRole(models.Model):
@@ -36,3 +37,16 @@ class TheaterShowRole(models.Model):
         for record in self:
                 name = f"{record.role_name} ({record.artist_id})"
                 record.display_name = name
+
+    @api.constrains('artist_id', 'event_id')
+    def _check_unique_artist_per_event(self):
+        for record in self:
+            for event in record.event_id:
+                # Шукаємо, чи є цей артист вже в цій події (крім поточного запису)
+                duplicates = event.show_role_ids.filtered(
+                    lambda r: r.artist_id == record.artist_id and r.id != record.id
+                )
+                if duplicates:
+                    raise ValidationError(_(
+                        "Artist %s is already assigned to this event!"
+                    ) % record.artist_id.full_name)
