@@ -4,11 +4,7 @@
         <field name="model">event.event</field>
         <field name="inherit_id" ref="event.view_event_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']" position="before">
-                <!-- Це поле автоматично оновить фонову картинку на сайті -->
-                <field name="image_1920" widget="image" class="oe_avatar"
-                       options="{'preview_image': 'image_128'}"/>
-            </xpath>
+
             <!-- Додаємо вибір типу у верхню частину форми -->
 <!--            <xpath expr="//field[@name='date_end']" position="after">-->
 <!--                <field name="event_type_selection" widget="radio" options="{'horizontal': true}"/>-->
@@ -29,7 +25,9 @@
 <!--            </xpath>-->
             <xpath expr="//field[@name='date_end']" position="after">
                 <field name="event_type_selection" widget="radio" options="{'horizontal': true}"/>
-                <group string="Theater Logistics" >
+                <group string="Staff options">
+                    <field name="image_1920" widget="image" class="oe_avatar"
+                       options="{'preview_image': 'image_128'}"/>
                     <field name="has_actors" widget="boolean_toggle"/>
                     <field name="has_orchestra" widget="boolean_toggle"/>
 
@@ -37,6 +35,10 @@
 <!--                        options="{'preview_image': 'image_128'}"/>-->
                 </group>
             </xpath>
+<!--                        <xpath expr="//field[@name='name']" position="before">-->
+<!--                <field name="image_1920" widget="image" class="oe_avatar"-->
+<!--                       options="{'preview_image': 'image_128'}"/>-->
+<!--            </xpath>-->
 <!--            <xpath expr="//field[@name='name']" position="before">-->
 <!--                <field name="kanban_image" widget="image" class="oe_avatar"/>-->
 <!--            </xpath>-->
