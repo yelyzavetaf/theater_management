@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="demo_theater_event_folk_singer" model="theater.show.role">
+            <field name="role_name">Main folk singer</field>
+            <field name="performer_type">solist</field>
+            <field name="artist_id" ref="demo_theater_artist_vynnyk"/>
+            <field name="description">Main folk singer</field>
+        </record>
+
+    </data>
+</odoo>

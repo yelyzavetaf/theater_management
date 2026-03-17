@@ -1,19 +1,93 @@
 <odoo>
     <data>
-        <record id="demo_theater_artist_nazarenko" model="theater.artist">
+        <record id="demo_theater_artist_vynnyk" model="theater.artist">
             <field name="first_name">Oleg</field>
-            <field name="last_name">Nazarenko</field>
+            <field name="last_name">Vynnyk</field>
             <field name="sex">male</field>
-            <field name="phone_number">0679770000</field>
-            <field name="birth_date">1993-04-11</field>
+            <field name="phone_number">0679770660</field>
+            <field name="birth_date">1983-04-11</field>
             <field name="joined_date">2005-07-11</field>
             <field name="country_id" ref="base.ua"/>
             <field name="performer_type">soloist</field>
-
-
-
         </record>
 
-    </data>
+        <record id="demo_theater_artist_savenko" model="theater.artist">
+            <field name="first_name">Petro</field>
+            <field name="last_name">Savenko</field>
+            <field name="sex">male</field>
+            <field name="phone_number">0679770110</field>
+            <field name="birth_date">1977-04-18</field>
+            <field name="joined_date">1999-02-04</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">dancer</field>
+            <field name="dance_style">modern</field>
+        </record>
 
+        <record id="demo_theater_artist_lyschuk" model="theater.artist">
+            <field name="first_name">Mykola</field>
+            <field name="last_name">Lyschuk</field>
+            <field name="sex">male</field>
+            <field name="phone_number">0679770044</field>
+            <field name="birth_date">1987-04-11</field>
+            <field name="joined_date">2015-03-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">actor</field>
+        </record>
+
+        <record id="demo_theater_artist_boyko" model="theater.artist">
+            <field name="first_name">Oleksandr</field>
+            <field name="last_name">Boyko</field>
+            <field name="sex">male</field>
+            <field name="phone_number">0679770033</field>
+            <field name="birth_date">1993-04-21</field>
+            <field name="joined_date">2015-07-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">extra</field>
+        </record>
+
+        <record id="demo_theater_artist_onyschenko" model="theater.artist">
+            <field name="first_name">Svitlana</field>
+            <field name="last_name">Onyschenko</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0679770077</field>
+            <field name="birth_date">1989-04-11</field>
+            <field name="joined_date">2011-09-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">chorister</field>
+        </record>
+
+        <record id="demo_theater_artist_paschenko" model="theater.artist">
+            <field name="first_name">Maryna</field>
+            <field name="last_name">Paschenko</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0679756000</field>
+            <field name="birth_date">1988-04-17</field>
+            <field name="joined_date">2003-06-16</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">soloist</field>
+        </record>
+
+        <record id="demo_theater_artist_prokopenko" model="theater.artist">
+            <field name="first_name">Vitalina</field>
+            <field name="last_name">Prokopenko</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0679793000</field>
+            <field name="birth_date">1993-04-11</field>
+            <field name="joined_date">2023-07-21</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">dancer</field>
+            <field name="dance_style">ballet</field>
+        </record>
+
+        <record id="demo_theater_artist_kravchenko" model="theater.artist">
+            <field name="first_name">Nadia</field>
+            <field name="last_name">Kravchenko</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0679772200</field>
+            <field name="birth_date">1999-07-11</field>
+            <field name="joined_date">2020-07-13</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="performer_type">actor</field>
+        </record>
+    </data>
 </odoo>

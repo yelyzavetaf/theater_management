@@ -1,18 +1,91 @@
 <odoo>
     <data>
-        <record id="demo_theater_musician_vynnyk" model="theater.musician">
+        <record id="demo_theater_musician_nazarenko" model="theater.musician">
             <field name="first_name">Oleg</field>
-            <field name="last_name">Vynnyk</field>
+            <field name="last_name">Nazarenko</field>
             <field name="sex">male</field>
             <field name="phone_number">0677770000</field>
             <field name="birth_date">1973-07-31</field>
             <field name="joined_date">1993-07-11</field>
             <field name="country_id" ref="base.ua"/>
             <field name="instrument_id" ref="theater_instrument_flute"/>
-
-
-
         </record>
 
+        <record id="demo_theater_musician_kyrychenko" model="theater.musician">
+            <field name="first_name">Stepan</field>
+            <field name="last_name">Kyrychenko</field>
+            <field name="sex">male</field>
+            <field name="phone_number">0677770000</field>
+            <field name="birth_date">1979-07-31</field>
+            <field name="joined_date">2007-07-15</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="instrument_id" ref="theater_instrument_oboe"/>
+        </record>
+
+        <record id="demo_theater_musician_rudenko" model="theater.musician">
+            <field name="first_name">Pavlo</field>
+            <field name="last_name">Rudenko</field>
+            <field name="sex">male</field>
+            <field name="phone_number">0677770000</field>
+            <field name="birth_date">1999-01-03</field>
+            <field name="joined_date">2005-08-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="instrument_id" ref="theater_instrument_horn"/>
+        </record>
+
+        <record id="demo_theater_musician_may" model="theater.musician">
+            <field name="first_name">Vanessa</field>
+            <field name="last_name">May</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0677770000</field>
+            <field name="birth_date">1993-07-11</field>
+            <field name="joined_date">2008-05-11</field>
+            <field name="country_id" ref="base.de"/>
+            <field name="instrument_id" ref="theater_instrument_violin"/>
+        </record>
+
+        <record id="demo_theater_musician_loren" model="theater.musician">
+            <field name="first_name">Sophie</field>
+            <field name="last_name">Loren</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0957770000</field>
+            <field name="birth_date">1999-02-01</field>
+            <field name="joined_date">2003-07-11</field>
+            <field name="country_id" ref="base.cz"/>
+            <field name="instrument_id" ref="theater_instrument_violin"/>
+        </record>
+
+        <record id="demo_theater_musician_petrenko" model="theater.musician">
+            <field name="first_name">Tetiana</field>
+            <field name="last_name">Petrenko</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0227770000</field>
+            <field name="birth_date">1973-07-21</field>
+            <field name="joined_date">1996-05-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="instrument_id" ref="theater_instrument_cello"/>
+        </record>
+
+        <record id="demo_theater_musician_korotenko" model="theater.musician">
+            <field name="first_name">Natalia</field>
+            <field name="last_name">Korotenko</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0676770000</field>
+            <field name="birth_date">1985-01-21</field>
+            <field name="joined_date">1993-07-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="instrument_id" ref="theater_instrument_harp"/>
+        </record>
+
+        <record id="demo_theater_musician_zinchenko" model="theater.musician">
+            <field name="first_name">Olga</field>
+            <field name="last_name">Zinchenko</field>
+            <field name="sex">female</field>
+            <field name="phone_number">0677770880</field>
+            <field name="birth_date">1987-04-11</field>
+            <field name="joined_date">2020-07-11</field>
+            <field name="country_id" ref="base.ua"/>
+            <field name="instrument_id" ref="theater_instrument_piano"/>
+        </record>
     </data>
 </odoo>

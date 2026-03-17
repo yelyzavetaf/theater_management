@@ -1,0 +1,65 @@
+<odoo>
+    <data>
+        <record id="demo_theater_role_solo_vynnyk" model="theater.show.role">
+            <field name="role_name">Main folk singer</field>
+            <field name="performer_type">soloist</field>
+            <field name="artist_id" ref="demo_theater_artist_vynnyk"/>
+            <field name="description">Main folk singer</field>
+        </record>
+
+        <record id="demo_theater_role_actor_hamlet" model="theater.show.role">
+            <field name="role_name">Hamlet (Hamlet)</field>
+            <field name="performer_type">actor</field>
+            <field name="artist_id" ref="demo_theater_artist_lyschuk"/>
+        </record>
+
+        <record id="demo_theater_role_actor_ophelia_hamlet" model="theater.show.role">
+            <field name="role_name">Ophelia (Hamlet)</field>
+            <field name="performer_type">actor</field>
+            <field name="artist_id" ref="demo_theater_artist_kravchenko"/>
+        </record>
+
+        <record id="demo_theater_role_dance_hamlet" model="theater.show.role">
+            <field name="role_name">Dance (Hamlet)</field>
+            <field name="performer_type">dancer</field>
+            <field name="artist_id" ref="demo_theater_artist_savenko"/>
+            <field name="description">Main folk singer</field>
+        </record>
+
+        <record id="demo_theater_role_extra_hamlet" model="theater.show.role">
+            <field name="role_name">Mass scene (Hamlet)</field>
+            <field name="performer_type">extra</field>
+            <field name="artist_id" ref="demo_theater_artist_boyko"/>
+        </record>
+
+        <record id="demo_theater_role_evening_chorister" model="theater.show.role">
+            <field name="role_name">Evening chorister</field>
+            <field name="performer_type">chorister</field>
+            <field name="artist_id" ref="demo_theater_artist_onyschenko"/>
+        </record>
+
+        <record id="demo_theater_role_evening_singer" model="theater.show.role">
+            <field name="role_name">Evening soloist</field>
+            <field name="performer_type">soloist</field>
+            <field name="artist_id" ref="demo_theater_artist_paschenko"/>
+        </record>
+
+        <record id="demo_theater_role_actor_lukash_mavka" model="theater.show.role">
+            <field name="role_name">Lukash (Mavka)</field>
+            <field name="performer_type">actor</field>
+            <field name="artist_id" ref="demo_theater_artist_lyschuk"/>
+        </record>
+
+        <record id="demo_theater_role_actor_mavka" model="theater.show.role">
+            <field name="role_name">Mavka (Mavka)</field>
+            <field name="performer_type">actor</field>
+            <field name="artist_id" ref="demo_theater_artist_kravchenko"/>
+        </record>
+
+        <record id="demo_theater_role_dance_mavka" model="theater.show.role">
+            <field name="role_name">Main dance (Mavka)</field>
+            <field name="performer_type">dancer</field>
+            <field name="artist_id" ref="demo_theater_artist_prokopenko"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record id="demo_theater_orchestra_musician_nazarenko" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_flute"/>
+            <field name="musician_id" ref="demo_theater_musician_nazarenko"/>
+        </record>
+
+        <record id="demo_theater_orchestra_musician_kyrychenko" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_oboe"/>
+            <field name="musician_id" ref="demo_theater_musician_kyrychenko"/>
+        </record>
+
+        <record id="demo_theater_orchestra_musician_rudenko" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_horn"/>
+            <field name="musician_id" ref="demo_theater_musician_rudenko"/>
+        </record>
+
+        <record id="demo_theater_orchestra_musician_may" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_violin"/>
+            <field name="musician_id" ref="demo_theater_musician_may"/>
+        </record>
+
+        <record id="demo_theater_orchestra_musician_loren" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_violin"/>
+            <field name="musician_id" ref="demo_theater_musician_loren"/>
+        </record>
+
+        <record id="demo_theater_orchestra_musician_petrenko" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_cello"/>
+            <field name="musician_id" ref="demo_theater_musician_petrenko"/>
+        </record>
+
+        <record id="demo_theater_orchestra_musician_korotenko" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_harp"/>
+            <field name="musician_id" ref="demo_theater_musician_korotenko"/>
+        </record>
+
+        <record id="demo_theater_orchestra_musician_zinchenko" model="theater.show.orchestra">
+            <field name="instrument_id" ref="theater_instrument_piano"/>
+            <field name="musician_id" ref="demo_theater_musician_zinchenko"/>
+        </record>
+    </data>
+</odoo>

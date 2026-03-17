@@ -27,6 +27,9 @@
     'demo': [
         "demo/theater_musician_demo.xml",
         "demo/theater_artist_demo.xml",
+        "demo/theater_show_orchestra_demo.xml",
+        "demo/theater_show_role_demo.xml",
+        "demo/theater_event_demo.xml",
     ],
 
     'images': ['static/description/banner.png', 'static/description/icon.png'],
