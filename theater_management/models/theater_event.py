@@ -28,7 +28,7 @@ class Event(models.Model):
     event_type_selection = fields.Selection([
         ('show', 'Show'),
         ('rehearsal', 'Rehearsal')
-    ], string="Тип події", default='show', required=True)
+    ], default='show', required=True)
 
     details = fields.Text()
 

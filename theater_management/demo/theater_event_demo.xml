@@ -1,10 +1,22 @@
 <odoo>
     <data>
-        <record id="demo_theater_event_folk_singer" model="theater.show.role">
-            <field name="role_name">Main folk singer</field>
-            <field name="performer_type">solist</field>
-            <field name="artist_id" ref="demo_theater_artist_vynnyk"/>
-            <field name="description">Main folk singer</field>
+        <record id="demo_theater_event_folk_songs" model="event.event">
+            <field name="name">Folk songs concert</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="date_begin">2026-03-20 17:00:00</field>
+            <field name="date_end">2026-03-20 19:00:00</field>
+            <field name="seats_limited">True</field>
+            <field name="seats_max">50</field>
+            <field name="address_id" ref="event.res_partner_location_0"/>
+            <field name="stage_id" ref="event.event_stage_booked"/>
+            <field name="lang" ref="base.lang_ua"/>
+<!--            <field name="image_1920" type="base64" file="theater_management/static/img/folk_concert.jpg"/>-->
+            <field name="tag_ids" eval="[(4, ref('theater_management.theater_event_tag_folk')), (4, ref('theater_management.theater_event_tag_opera'))]"/>
+            <field name="has_orchestra">False</field>
+            <field name="has_actors">True</field>
+            <field name="event_type_selection">show</field>
+            <field name="details">Unforgettable evening with folk songs.</field>
+            <field name="show_role_ids" eval="[(4, ref('theater_management.demo_theater_role_solo_vynnyk'))]"/>
         </record>
 
     </data>
