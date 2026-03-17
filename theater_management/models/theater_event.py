@@ -44,11 +44,14 @@ class Event(models.Model):
         for record in self:
             if record.image_1920:
                 vals = {
-                    "background-image": f"url('/web/image/event.event/{record.id}/image_1920')",
+                    "background-image":
+                        f"url('/web/image/event.event/{record.id}/image_1920')",
                     "resize_class": "o_record_has_cover cover_auto",
                     "opacity": "0.4"
                 }
-                super(Event, record).write({'cover_properties': json.dumps(vals)})
+                super(Event, record).write(
+                    {'cover_properties': json.dumps(vals)}
+                )
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -88,10 +91,12 @@ class Event(models.Model):
             if self.name and self.name.startswith(prefix):
                 self.name = self.name.replace(prefix, "")
 
-    @api.depends('show_role_ids', 'orchestra_ids', 'event_type_selection', 'has_actors', 'has_orchestra')
+    @api.depends('show_role_ids', 'orchestra_ids', 'event_type_selection',
+                 'has_actors', 'has_orchestra')
     def _compute_description(self):
         for record in self:
-            label = "Rehearsal" if record.event_type_selection == 'rehearsal' else "Show"
+            label = "Rehearsal" if record.event_type_selection == 'rehearsal' \
+                else "Show"
             html = f"<section class='s_text_block pb32 pt32'><h3>{label}</h3>"
 
             if record.details:
@@ -110,7 +115,8 @@ class Event(models.Model):
                 html += "<h5>Orchestra:</h5><ul>"
                 for orc in record.orchestra_ids:
                     musician_name = orc.musician_id.full_name
-                    html += f"<li>{orc.instrument_id.name}: {musician_name}</li>"
+                    html += \
+                        f"<li>{orc.instrument_id.name}: {musician_name}</li>"
                 html += "</ul>"
 
             html += "</section>"

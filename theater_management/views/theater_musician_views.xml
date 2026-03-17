@@ -50,8 +50,10 @@
                         <page name="events_history_musician" string="Events history">
                             <field name="orchestra_ids">
                                 <list>
-                                    <field name="event_id"/>
-<!--                                    <field name="event_id.date_begin"/>-->
+                                    <field name="event_ids"
+                                           invisible="context.get('default_event_id')"
+                                           widget="many2many_tags"
+                                           options="{'no_create': True}"/>
                                     <field name="instrument_id"/>
                                 </list>
                             </field>

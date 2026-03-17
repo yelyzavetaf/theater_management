@@ -3,8 +3,6 @@ from dateutil.relativedelta import relativedelta
 
 from odoo import _, api, models, fields
 
-from odoo.exceptions import UserError, ValidationError
-
 
 class TheaterMusician(models.Model):
 

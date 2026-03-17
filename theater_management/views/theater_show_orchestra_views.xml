@@ -6,7 +6,7 @@
             <list string="Show Orchestra" >
                 <field name="instrument_id" />
                 <field name="musician_id" options="{'no_create': True}"/>
-                <field name="event_id"
+                <field name="event_ids"
                        invisible="context.get('default_event_id')"
                        widget="many2many_tags"
                        options="{'no_create': True}"/>
@@ -22,7 +22,7 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="event_id" options="{'no_create': True}"/>
+                            <field name="event_ids" options="{'no_create': True}"/>
                             <field name="instrument_id"/>
                             <field name="musician_id" options="{'no_create': True}"/>
                         </group>

@@ -6,7 +6,13 @@ class TheaterShowRole(models.Model):
     _name = 'theater.show.role'
     _description = 'Show Role Assignment'
 
-    event_id = fields.Many2many(comodel_name='event.event', string="Show/Event")
+    event_ids = fields.Many2many(
+        comodel_name='event.event',
+        relation='event_show_role_rel',
+        column1='role_id',
+        column2='event_id',
+        string="Show/Event"
+    )
 
     role_name = fields.Char(string="Specific Role", required=True)
     performer_type = fields.Selection([
@@ -31,20 +37,21 @@ class TheaterShowRole(models.Model):
     def _onchange_performer_type(self):
         self.artist_id = False
 
-
     @api.depends('artist_id', 'role_name')
     def _compute_display_name(self):
         for record in self:
-                name = f"{record.role_name} ({record.artist_id})"
-                record.display_name = name
+            name = f"{record.role_name} ({record.artist_id})"
+            record.display_name = name
 
-    @api.constrains('artist_id', 'event_id')
+    @api.constrains('artist_id', 'event_ids')
     def _check_unique_artist_per_event(self):
         for record in self:
-            for event in record.event_id:
-                # Шукаємо, чи є цей артист вже в цій події (крім поточного запису)
+            for event in record.event_ids:
+                # Check if the artist is already involved in the show
+                # (except current  record)
                 duplicates = event.show_role_ids.filtered(
-                    lambda r: r.artist_id == record.artist_id and r.id != record.id
+                    lambda r: r.artist_id == record.artist_id
+                    and r.id != record.id
                 )
                 if duplicates:
                     raise ValidationError(_(

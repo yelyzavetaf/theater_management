@@ -1,8 +1,4 @@
-from datetime import date
-from dateutil.relativedelta import relativedelta
-
 from odoo import _, api, models, fields
-from odoo.exceptions import ValidationError
 
 
 class TheaterMusicalInstrument(models.Model):
@@ -12,11 +8,11 @@ class TheaterMusicalInstrument(models.Model):
 
     name = fields.Char(string="Instrument Name", required=True)
     category = fields.Selection([
-        ('strings', 'Strings'),    # Струнні
-        ('woodwinds', 'Woodwinds'), # Духові дерев'яні
-        ('brass', 'Brass'),        # Духові мідні
-        ('percussion', 'Percussion'), # Ударні
-        ('keyboard', 'Keyboard')   # Клавішні
+        ('strings', 'Strings'),
+        ('woodwinds', 'Woodwinds'),
+        ('brass', 'Brass'),
+        ('percussion', 'Percussion'),
+        ('keyboard', 'Keyboard')
     ], required=True)
 
     active = fields.Boolean(default=True)
@@ -37,4 +33,3 @@ class TheaterMusicalInstrument(models.Model):
     def _compute_number_of_musicians(self):
         for record in self:
             record.number_of_musicians = len(record.musician_ids)
-
