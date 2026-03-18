@@ -5,6 +5,15 @@
         <field name="inherit_id" ref="event.view_event_form"/>
         <field name="arch" type="xml">
 
+            <!-- Wizard button-->
+            <xpath expr="//header" position="inside">
+                <button name="%(action_event_scheduler_wizard)d"
+                        string="Schedule Multiple"
+                        type="action"
+                        class="btn-secondary"/>
+            </xpath>
+
+            <!-- Custom Event fields-->
             <xpath expr="//field[@name='date_end']" position="after">
                 <field name="event_type_selection" widget="radio" options="{'horizontal': true}"/>
                 <group string="Event Details">
@@ -13,6 +22,7 @@
                     <field name="has_orchestra" widget="boolean_toggle"/>
                     <field name="image_1920" widget="image" class="oe_avatar"
                        options="{'preview_image': 'image_128'}" string="Event banner"/>
+                    <field name="is_published" widget="boolean_toggle"/>
                 </group>
             </xpath>
             <xpath expr="//field[@name='lang']" position="before">

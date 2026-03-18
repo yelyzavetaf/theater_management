@@ -1,0 +1,30 @@
+<odoo>
+    <record id="view_event_scheduler_wizard_form" model="ir.ui.view">
+        <field name="model">theater.event.scheduler.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Schedule Multiple Events">
+                <group>
+                    <field name="event_id" readonly="1"/>
+                </group>
+                <separator string="Select Dates"/>
+                <field name="schedule_line_ids">
+                    <list editable="bottom">
+                        <field name="date"/>
+                    </list>
+                </field>
+                <footer>
+                    <button name="action_schedule" string="Create Events" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_event_scheduler_wizard" model="ir.actions.act_window">
+        <field name="name">Schedule Event Copies</field>
+        <field name="res_model">theater.event.scheduler.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_event_id': active_id}</field>
+    </record>
+</odoo>

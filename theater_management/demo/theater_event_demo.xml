@@ -9,14 +9,92 @@
             <field name="seats_max">50</field>
             <field name="address_id" ref="event.res_partner_location_0"/>
             <field name="stage_id" ref="event.event_stage_booked"/>
-            <field name="lang" ref="base.lang_ua"/>
-<!--            <field name="image_1920" type="base64" file="theater_management/static/img/folk_concert.jpg"/>-->
+            <field name="is_published" eval="True"/>
+            <field name="image_1920" type="base64" file="theater_management/static/img/songs_image.jpg"/>
             <field name="tag_ids" eval="[(4, ref('theater_management.theater_event_tag_folk')), (4, ref('theater_management.theater_event_tag_opera'))]"/>
             <field name="has_orchestra">False</field>
             <field name="has_actors">True</field>
             <field name="event_type_selection">show</field>
             <field name="details">Unforgettable evening with folk songs.</field>
             <field name="show_role_ids" eval="[(4, ref('theater_management.demo_theater_role_solo_vynnyk'))]"/>
+        </record>
+
+        <record id="demo_theater_event_mavka" model="event.event">
+            <field name="name">Mavka show</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="date_begin">2026-03-22 17:00:00</field>
+            <field name="date_end">2026-03-22 19:00:00</field>
+            <field name="seats_limited">True</field>
+            <field name="seats_max">50</field>
+            <field name="address_id" ref="event.res_partner_location_0"/>
+            <field name="stage_id" ref="event.event_stage_booked"/>
+            <field name="is_published" eval="True"/>
+            <field name="image_1920" type="base64" file="theater_management/static/img/mavka_image.jpg"/>
+            <field name="tag_ids" eval="[(4, ref('theater_management.theater_event_tag_modern')), (4, ref('theater_management.theater_event_tag_ballet'))]"/>
+            <field name="has_orchestra">True</field>
+            <field name="has_actors">True</field>
+            <field name="event_type_selection">show</field>
+            <field name="details">Magical Mavka show.</field>
+            <field name="show_role_ids" eval="[(4, ref('theater_management.demo_theater_role_actor_lukash_mavka')), (4, ref('theater_management.demo_theater_role_actor_mavka')) , (4, ref('theater_management.demo_theater_role_dance_mavka'))]"/>
+            <field name="orchestra_ids" eval="[(4, ref('theater_management.demo_theater_orchestra_musician_zinchenko')), (4, ref('theater_management.demo_theater_orchestra_musician_korotenko')), (4, ref('theater_management.demo_theater_orchestra_musician_kyrychenko')), (4, ref('theater_management.demo_theater_orchestra_musician_nazarenko'))]"/>
+        </record>
+
+        <record id="demo_theater_event_hamlet" model="event.event">
+            <field name="name">Hamlet</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="date_begin">2026-03-23 17:00:00</field>
+            <field name="date_end">2026-03-23 19:00:00</field>
+            <field name="seats_limited">True</field>
+            <field name="seats_max">50</field>
+            <field name="address_id" ref="event.res_partner_location_0"/>
+            <field name="stage_id" ref="event.event_stage_booked"/>
+            <field name="is_published" eval="True"/>
+            <field name="image_1920" type="base64" file="theater_management/static/img/hamlet_image.jpg"/>
+            <field name="tag_ids" eval="[(4, ref('theater_management.theater_event_tag_classical')), (4, ref('theater_management.theater_event_tag_ballet'))]"/>
+            <field name="has_orchestra">True</field>
+            <field name="has_actors">True</field>
+            <field name="event_type_selection">show</field>
+            <field name="details">Classical Shakespeare's Hamlet.</field>
+            <field name="show_role_ids" eval="[(4, ref('theater_management.demo_theater_role_actor_hamlet')), (4, ref('theater_management.demo_theater_role_actor_ophelia_hamlet')) , (4, ref('theater_management.demo_theater_role_dance_hamlet'))]"/>
+            <field name="orchestra_ids" eval="[(4, ref('theater_management.demo_theater_orchestra_musician_zinchenko')), (4, ref('theater_management.demo_theater_orchestra_musician_korotenko')), (4, ref('theater_management.demo_theater_orchestra_musician_kyrychenko')), (4, ref('theater_management.demo_theater_orchestra_musician_rudenko')), (4, ref('theater_management.demo_theater_orchestra_musician_loren'))]"/>
+        </record>
+
+        <record id="demo_theater_event_hamlet_reh" model="event.event">
+            <field name="name">[REH] Hamlet</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="date_begin">2026-03-23 13:00:00</field>
+            <field name="date_end">2026-03-23 16:00:00</field>
+            <field name="seats_limited">False</field>
+            <field name="address_id" ref="event.res_partner_location_0"/>
+            <field name="stage_id" ref="event.event_stage_booked"/>
+            <field name="is_published" eval="False"/>
+            <field name="image_1920" type="base64" file="theater_management/static/img/hamlet_image.jpg"/>
+            <field name="tag_ids" eval="[(4, ref('theater_management.theater_event_tag_classical')), (4, ref('theater_management.theater_event_tag_ballet'))]"/>
+            <field name="has_orchestra">True</field>
+            <field name="has_actors">True</field>
+            <field name="event_type_selection">rehearsal</field>
+            <field name="details">Classical Shakespeare's Hamlet.</field>
+            <field name="show_role_ids" eval="[(4, ref('theater_management.demo_theater_role_actor_hamlet')), (4, ref('theater_management.demo_theater_role_actor_ophelia_hamlet')) , (4, ref('theater_management.demo_theater_role_dance_hamlet'))]"/>
+            <field name="orchestra_ids" eval="[(4, ref('theater_management.demo_theater_orchestra_musician_zinchenko')), (4, ref('theater_management.demo_theater_orchestra_musician_korotenko')), (4, ref('theater_management.demo_theater_orchestra_musician_kyrychenko')), (4, ref('theater_management.demo_theater_orchestra_musician_rudenko')), (4, ref('theater_management.demo_theater_orchestra_musician_loren'))]"/>
+        </record>
+
+        <record id="demo_theater_event_violin" model="event.event">
+            <field name="name">[REH] Violin concert</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="date_begin">2026-03-29 17:00:00</field>
+            <field name="date_end">2026-03-29 19:00:00</field>
+            <field name="seats_limited">True</field>
+            <field name="seats_max">30</field>
+            <field name="address_id" ref="event.res_partner_location_0"/>
+            <field name="stage_id" ref="event.event_stage_booked"/>
+            <field name="is_published" eval="False"/>
+            <field name="image_1920" type="base64" file="theater_management/static/img/songs_image.jpg"/>
+            <field name="tag_ids" eval="[(4, ref('theater_management.theater_event_tag_classical'))]"/>
+            <field name="has_orchestra">True</field>
+            <field name="has_actors">False</field>
+            <field name="event_type_selection">rehearsal</field>
+            <field name="details">Rehearsal for violins and cello.</field>
+            <field name="orchestra_ids" eval="[(4, ref('theater_management.demo_theater_orchestra_musician_petrenko')), (4, ref('theater_management.demo_theater_orchestra_musician_loren')), (4, ref('theater_management.demo_theater_orchestra_musician_may'))]"/>
         </record>
 
     </data>

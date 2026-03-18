@@ -35,7 +35,8 @@ class Event(models.Model):
     description = fields.Html(
         compute='_compute_description',
         store=True,
-        readonly=False,
+        readonly=True,
+        precompute=True,
         render_engine='qweb'
     )
 

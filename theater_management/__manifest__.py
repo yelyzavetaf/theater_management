@@ -14,7 +14,7 @@
         # "security/hr_hospital_security.xml",
         "data/theater_musical_instrument_data.xml",
         "data/theater_event_tags_data.xml",
-
+        "wizard/theater_event_scheduler_wizard_view.xml",
         "views/theater_menus.xml",
         "views/theater_musical_instrument_views.xml",
         "views/theater_musician_views.xml",
@@ -32,5 +32,5 @@
         "demo/theater_event_demo.xml",
     ],
 
-    'images': ['static/description/banner.png', 'static/description/icon.png'],
+    'images': ['static/description/banner.png', 'static/description/icon.png', 'static/img/hamlet_image.jpg', 'static/img/mavka_image.jpg', 'static/img/songs_image.jpg'],
 }

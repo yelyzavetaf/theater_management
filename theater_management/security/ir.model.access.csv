@@ -5,5 +5,7 @@ access_theater_musician,access_theater_musician,model_theater_musician,base.grou
 access_theater_show_role,access_theater_show_role,model_theater_show_role,base.group_user,1,1,1,1
 access_theater_show_orchestra,access_theater_show_orchestra,model_theater_show_orchestra,base.group_user,1,1,1,1
 access_theater_event,access_theater_event,model_event_event,base.group_user,1,1,1,1
+access_theater_event_scheduler_wizard,access_theater_event_scheduler_wizard,model_theater_event_scheduler_wizard,base.group_user,1,1,1,1
+access_theater_event_scheduler_line,access_theater_theater_event_scheduler_line,model_theater_event_scheduler_line,base.group_user,1,1,1,1
 access_theater_role_public,theater.show.role,model_theater_show_role,base.group_public,1,0,0,0
 access_theater_orc_public,theater.show.orchestra,model_theater_show_orchestra,base.group_public,1,0,0,0
