@@ -1,0 +1,58 @@
+<odoo>
+    <record id="action_report_musician_hours" model="ir.actions.report">
+        <field name="name">Participation Report</field>
+        <field name="model">theater.musician</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">theater_management.report_musician_participation</field>
+        <field name="print_report_name">'Participation - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_theater_musician"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <template id="report_musician_participation">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="text-center">Musician report: <span t-field="o.full_name"/></h2>
+                        <br/>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                    <th class="text-end">Hours on stage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="data" t-value="o.get_participation_data()"/>
+                                <t t-foreach="data['events']" t-as="line">
+                                    <tr>
+                                        <td><span t-esc="line['name']"/></td>
+                                        <td><span t-esc="line['date']" t-options='{"widget": "datetime"}'/></td>
+                                        <td class="text-end"><span t-esc="line['hours']"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <div class="row justify-content-end">
+                            <div class="col-4">
+                                <table class="table table-sm">
+                                    <tr class="border-black o_total">
+                                        <td><strong>Total hours on stage</strong></td>
+                                        <td class="text-end">
+                                            <span t-esc="data['total']"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

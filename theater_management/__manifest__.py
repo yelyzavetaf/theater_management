@@ -22,7 +22,7 @@
         "views/theater_show_role_views.xml",
         "views/theater_show_orchestra_views.xml",
         "views/theater_event_views.xml",
-
+        "report/theater_musician_report.xml"
     ],
     'demo': [
         "demo/theater_musician_demo.xml",

@@ -55,3 +55,29 @@ class TheaterMusician(models.Model):
             today = date.today()
             diff = relativedelta(today, musician.joined_date)
             musician.experience = diff.years
+
+    def get_participation_data(self, date_from=False, date_to=False):
+        """Метод для збору подій та годин для PDF"""
+        self.ensure_one()
+        # Шукаємо всі записи в оркестрі для цього музиканта
+        domain = [('musician_id', '=', self.id)]
+        if date_from:
+            domain.append(('event_ids.date_begin', '>=', date_from))
+        if date_to:
+            domain.append(('event_ids.date_begin', '<=', date_to))
+
+        orchestra_lines = self.env['theater.show.orchestra'].search(domain)
+        events = orchestra_lines.mapped('event_ids')
+
+        report_lines = []
+        total_hours = 0.0
+        for event in events:
+            hours = (event.date_end - event.date_begin).total_seconds() / 3600
+            total_hours += hours
+            report_lines.append({
+                'name': event.name,
+                'date': event.date_begin,
+                'hours': round(hours, 2)
+            })
+        return {'events': report_lines, 'total': round(total_hours, 2)}
+
