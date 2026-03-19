@@ -4,7 +4,7 @@
     "author": "Lisa",
     "website": "https://www.lipsum.com/",
     'category': 'Extra Tools',
-    'summary': 'Allows to track shows and actors',
+    'summary': 'Allows to track shows and cast and orchestra for theathers',
     "license": "OPL-1",
     'depends': ['base', 'event', 'website_event', 'website'],
 

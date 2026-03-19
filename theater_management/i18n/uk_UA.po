@@ -1,0 +1,1034 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* theater_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-19 13:12+0000\n"
+"PO-Revision-Date: 2026-03-19 13:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: theater_management
+#: model:ir.actions.report,print_report_name:theater_management.action_report_musician_hours
+msgid "'Participation - %s' % (object.full_name)"
+msgstr "'Залученість - %s' % (object.full_name)"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+msgid "<b>Dance (Hamlet)</b> — Savenko Petro"
+msgstr "<b>Танцюрист (Гамлет)</b> — Savenko Petro"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+msgid "<b>Hamlet (Hamlet)</b> — Lyschuk Mykola"
+msgstr "<b>Гамлет (Гамлет)</b> — Lyschuk Mykola"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "<b>Lukash (Mavka)</b> — Lyschuk Mykola"
+msgstr "<b>Лукаш (Мавка)</b> — Lyschuk Mykola"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "<b>Main dance (Mavka)</b> — Prokopenko Vitalina"
+msgstr "<b>Головний танцюрист (Мавка)</b> — Prokopenko Vitalina"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_folk_songs
+msgid "<b>Main folk singer</b> — Vynnyk Oleg"
+msgstr "<b>Головний народний співак</b> — Vynnyk Oleg"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "<b>Mavka (Mavka)</b> — Kravchenko Nadia"
+msgstr "<b>Мавка (Мавка)</b> — Kravchenko Nadia"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+msgid "<b>Ophelia (Hamlet)</b> — Kravchenko Nadia"
+msgstr "<b>Офелія (Гамлет)</b> — Kravchenko Nadia"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+msgid "<strong>Total hours:</strong>"
+msgstr "<strong>Всього годин:</strong>"
+
+#. module: theater_management
+#: model:ir.model,name:theater_management.model_theater_abstract_person
+msgid "Abstract Person"
+msgstr "Абстрактна особа"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__active
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__active
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__active
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__active
+msgid "Active"
+msgstr "Активний"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__performer_type__actor
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_show_role__performer_type__actor
+msgid "Actor/Actress"
+msgstr "Актор/Акторка"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__age
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__age
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__age
+msgid "Age"
+msgstr "Вік"
+
+#. module: theater_management
+#: model:ir.actions.act_window,name:theater_management.action_theater_artist_window
+#: model:ir.model,name:theater_management.model_theater_artist
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__artist_id
+msgid "Artist"
+msgstr "Артист"
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_show_role.py:0
+msgid "Artist %s is already assigned to this event!"
+msgstr "Артиста %s вже назначено на цю подію!"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_search
+msgid "Artist's Name"
+msgstr "Ім'я артиста"
+
+#. module: theater_management
+#: model:ir.ui.menu,name:theater_management.theater_menu_artist
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_list
+msgid "Artists"
+msgstr "Артисти"
+
+#. module: theater_management
+#: model:event.tag,name:theater_management.theater_event_tag_ballet
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__dance_style__ballet
+msgid "Ballet"
+msgstr "Балет"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_bassoon
+msgid "Bassoon"
+msgstr "Фагот"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__birth_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__birth_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__birth_date
+msgid "Birth Date"
+msgstr "Дата народження"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musical_instrument__category__brass
+msgid "Brass"
+msgstr "Духові мідні"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_scheduler_wizard_form
+msgid "Cancel"
+msgstr "Відмінити"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__show_role_ids
+msgid "Cast"
+msgstr "Акторський склад"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_form_inherit_theater_combined
+msgid "Cast & Roles"
+msgstr "Акторський склад та ролі"
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_event.py:0
+#: model_terms:event.event,description:theater_management.demo_theater_event_folk_songs
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "Cast:"
+msgstr "Акторський склад:"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__category
+msgid "Category"
+msgstr "Категорія"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_celesta
+msgid "Celesta"
+msgstr "Челеста"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_cello
+msgid "Cello"
+msgstr "Віолончель"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_violin
+msgid "Cello: Petrenko Tetiana"
+msgstr "Віолончель: Petrenko Tetiana"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__performer_type__chorister
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_show_role__performer_type__chorister
+msgid "Choir Member"
+msgstr "Хор"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__country_id
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__country_id
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__country_id
+msgid "Citizenship"
+msgstr "Громандянство"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_clarinet
+msgid "Clarinet"
+msgstr "Кларнет"
+
+#. module: theater_management
+#: model:event.tag,name:theater_management.theater_event_tag_classical
+msgid "Classical"
+msgstr "Класика"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+msgid "Classical Shakespeare's Hamlet."
+msgstr "Класичний Гамлет Шекспіра"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__language_id
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__language_id
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__language_id
+msgid "Communication Language"
+msgstr "Мова комунікації"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_form
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_form
+msgid "Contact information"
+msgstr "Контактна інформація"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_scheduler_wizard_form
+msgid "Create Events"
+msgstr "Створити події"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__create_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__create_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__create_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__create_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__create_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__create_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__create_uid
+msgid "Created by"
+msgstr "Ким створено"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__create_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__create_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__create_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__create_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__create_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__create_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__create_date
+msgid "Created on"
+msgstr "Дата створення"
+
+#. module: theater_management
+#: model:event.tag,name:theater_management.theater_event_tag_dance
+msgid "Dance"
+msgstr "Танці"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__dance_style
+msgid "Dance Style"
+msgstr "Стиль танцю"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__performer_type__dancer
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_show_role__performer_type__dancer
+msgid "Dancer"
+msgstr "Танцівник"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__date
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+msgid "Date"
+msgstr "Дата"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__description
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__details
+msgid "Details"
+msgstr "Деталі"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__display_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_double_bass
+msgid "Double Bass"
+msgstr "Контрабас"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__email
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__email
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__email
+msgid "Email"
+msgstr "Електронна пошта"
+
+#. module: theater_management
+#: model:ir.model,name:theater_management.model_event_event
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__event_id
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+msgid "Event"
+msgstr "Подія"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_form_inherit_theater_combined
+msgid "Event Details"
+msgstr "Деталі події"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__event_type_selection
+msgid "Event Type Selection"
+msgstr "Вибір типу події"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_form_inherit_theater_combined
+msgid "Event banner"
+msgstr "Банет події"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_form_inherit_theater_combined
+msgid "Event language"
+msgstr "Мова події"
+
+#. module: theater_management
+#: model:ir.ui.menu,name:theater_management.theater_menu_events
+msgid "Events"
+msgstr "Події"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_form
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_form
+msgid "Events history"
+msgstr "Історія подій"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__performer_type__extra
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_show_role__performer_type__extra
+msgid "Extra (Mass Scene)"
+msgstr "Масовка"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_abstract_person__sex__female
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__sex__female
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musician__sex__female
+msgid "Female"
+msgstr "Жіноча"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__first_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__first_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__first_name
+msgid "First Name"
+msgstr "Ім'я"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_form
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_form
+msgid "First name"
+msgstr "Ім'я"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_flute
+msgid "Flute"
+msgstr "Флейта"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "Flute: Nazarenko Oleg"
+msgstr "Флейта: Nazarenko Oleg"
+
+#. module: theater_management
+#: model:event.tag,name:theater_management.theater_event_tag_folk
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__dance_style__folk
+msgid "Folk"
+msgstr "Народний"
+
+#. module: theater_management
+#: model:event.event,name:theater_management.demo_theater_event_folk_songs
+msgid "Folk songs concert"
+msgstr "Концерт народних пісень"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_horn
+msgid "French Horn"
+msgstr "Валторна"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+msgid "French Horn: Rudenko Pavlo"
+msgstr "Валторна: Rudenko Pavlo"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__full_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__full_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__full_name
+msgid "Full Name"
+msgstr "ПІБ"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_form
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_form
+msgid "Full name"
+msgstr "ПІБ"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_form
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_form
+msgid "General information"
+msgstr "Загальна інформація"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_piano
+msgid "Grand Piano"
+msgstr "Рояль"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "Grand Piano: Zinchenko Olga"
+msgstr "Рояль: Zinchenko Olga"
+
+#. module: theater_management
+#: model:event.event,name:theater_management.demo_theater_event_hamlet
+msgid "Hamlet"
+msgstr "Гамлет"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_harp
+msgid "Harp"
+msgstr "Арфа"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "Harp: Korotenko Natalia"
+msgstr "Арфа: Korotenko Natalia"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+msgid "Hours on stage"
+msgstr "Години на сцені"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__id
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__id
+msgid "ID"
+msgstr "ID"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__image_1920
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__image_1920
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__image_1920
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__image_1920
+msgid "Image"
+msgstr "Зображення"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__image_1024
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__image_1024
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__image_1024
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__image_1024
+msgid "Image 1024"
+msgstr "Зображення 1024"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__image_128
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__image_128
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__image_128
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__image_128
+msgid "Image 128"
+msgstr "Зображення 128"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__image_256
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__image_256
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__image_256
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__image_256
+msgid "Image 256"
+msgstr "Зображення 56"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__image_512
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__image_512
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__image_512
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__image_512
+msgid "Image 512"
+msgstr "Зображення 512"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__instrument_id
+msgid "Instrument"
+msgstr "Музичний інстручент"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__name
+msgid "Instrument Name"
+msgstr "Назва музичного інструмента"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+msgid "Instrument:"
+msgstr "Музичний інструмент:"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__joined_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__joined_date
+msgid "Joined Date"
+msgstr "Дата початку роботи"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musical_instrument__category__keyboard
+msgid "Keyboard"
+msgstr "Клавішні"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__last_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__last_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__last_name
+msgid "Last Name"
+msgstr "Прізвище"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__write_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__write_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__write_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__write_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__write_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__write_uid
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__write_uid
+msgid "Last Updated by"
+msgstr "Останнє оновлення"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__write_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__write_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__write_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__write_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__write_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__write_date
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__write_date
+msgid "Last Updated on"
+msgstr "Дата останнього оновлення"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_form
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_form
+msgid "Last name"
+msgstr "Прізвище"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "Magical Mavka show."
+msgstr "Магічне шоу Мавка."
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_abstract_person__sex__male
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__sex__male
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musician__sex__male
+msgid "Male"
+msgstr "Чоловіча"
+
+#. module: theater_management
+#: model:event.event,name:theater_management.demo_theater_event_mavka
+msgid "Mavka show"
+msgstr "Мавка"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__middle_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__middle_name
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__middle_name
+msgid "Middle Name"
+msgstr "По-батькові"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_form
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_form
+msgid "Middle name"
+msgstr "По-батькові"
+
+#. module: theater_management
+#: model:event.tag,name:theater_management.theater_event_tag_modern
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__dance_style__modern
+msgid "Modern"
+msgstr "Сучаний"
+
+#. module: theater_management
+#: model:ir.model,name:theater_management.model_theater_musical_instrument
+#: model_terms:ir.ui.view,arch_db:theater_management.view_theater_musical_instrument_form
+msgid "Musical Instrument"
+msgstr "Музичний інструмент"
+
+#. module: theater_management
+#: model:ir.actions.act_window,name:theater_management.action_theater_musical_instrument_window
+#: model:ir.ui.menu,name:theater_management.theater_menu_musical_instrument
+#: model_terms:ir.ui.view,arch_db:theater_management.view_theater_musical_instrument_list
+msgid "Musical Instruments"
+msgstr "Музичні інструменти"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__instrument_id
+msgid "Musical instrument"
+msgstr "Музичний інструмент"
+
+#. module: theater_management
+#: model:ir.actions.act_window,name:theater_management.action_theater_musician_window
+#: model:ir.model,name:theater_management.model_theater_musician
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__musician_id
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+msgid "Musician"
+msgstr "Музикант"
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_show_orchestra.py:0
+msgid "Musician %s is already involved in this event!"
+msgstr "Музикант %s вже задіяний у цій події!"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_search
+msgid "Musician's Name"
+msgstr "Ім'я музиканта"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__musician_ids
+#: model:ir.ui.menu,name:theater_management.theater_menu_musician
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_list
+#: model_terms:ir.ui.view,arch_db:theater_management.view_theater_musical_instrument_form
+msgid "Musicians"
+msgstr "Музиканти"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_musical_instrument__number_of_musicians
+msgid "Number of Musicians"
+msgstr "Кількість музикантів"
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_oboe
+msgid "Oboe"
+msgstr "Гобой"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "Oboe: Kyrychenko Stepan"
+msgstr "Гобой: Kyrychenko Stepan"
+
+#. module: theater_management
+#: model:ir.model.fields,help:theater_management.field_theater_artist__dance_style
+msgid "Only for dancers"
+msgstr "Тільки для натцівників"
+
+#. module: theater_management
+#: model:event.tag,name:theater_management.theater_event_tag_opera
+msgid "Opera"
+msgstr "Опера"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__orchestra_ids
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__orchestra_ids
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_form_inherit_theater_combined
+msgid "Orchestra"
+msgstr "Оркестр"
+
+#. module: theater_management
+#: model:ir.model,name:theater_management.model_theater_show_orchestra
+msgid "Orchestra Assignment"
+msgstr "Учасники окестру"
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_event.py:0
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+#: model_terms:event.event,description:theater_management.demo_theater_event_violin
+msgid "Orchestra:"
+msgstr "Оркестр:"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_abstract_person__sex__other
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__sex__other
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musician__sex__other
+msgid "Other"
+msgstr "Інша"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.report_musician_participation
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Сторінка: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: theater_management
+#: model:ir.actions.report,name:theater_management.action_report_musician_hours
+msgid "Participation Report"
+msgstr "Звіт участі"
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musical_instrument__category__percussion
+msgid "Percussion"
+msgstr "Ударні"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__performer_type
+msgid "Performer Type"
+msgstr "Тип ролі"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__phone_number
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__phone_number
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__phone_number
+msgid "Phone Number"
+msgstr "Номер телефону"
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_abstract_person.py:0
+msgid "Phone number is too short."
+msgstr "Номер телефону надто короткий."
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_abstract_person.py:0
+msgid "Phone number should contain digits only."
+msgstr "Номер телефону має містити тільки цифри."
+
+#. module: theater_management
+#: model:ir.ui.menu,name:theater_management.theater_menu_planning
+msgid "Planning"
+msgstr "Планування"
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_event.py:0
+#: model:ir.model.fields.selection,name:theater_management.selection__event_event__event_type_selection__rehearsal
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+#: model_terms:event.event,description:theater_management.demo_theater_event_violin
+msgid "Rehearsal"
+msgstr "Репетиція"
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_violin
+msgid "Rehearsal for violins and cello."
+msgstr "Репетиція для скрипалів та віолончелі"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__performer_type
+msgid "Role Category"
+msgstr "Категорія ролі"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__role_ids
+msgid "Roles"
+msgstr "Ролі"
+
+#. module: theater_management
+#: model:ir.model,name:theater_management.model_theater_event_scheduler_wizard
+msgid "Schedule Event"
+msgstr "Запланувати подію"
+
+#. module: theater_management
+#: model:ir.actions.act_window,name:theater_management.action_event_scheduler_wizard
+msgid "Schedule Event Copies"
+msgstr "Запланувати копії події"
+
+#. module: theater_management
+#: model:ir.model,name:theater_management.model_theater_event_scheduler_line
+msgid "Schedule Line"
+msgstr "Рядок розкладу"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_form_inherit_theater_combined
+msgid "Schedule Multiple"
+msgstr "Запланувати на інші дати"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_scheduler_wizard_form
+msgid "Schedule Multiple Events"
+msgstr "Заплунвати події"
+
+#. module: theater_management
+#: model_terms:ir.actions.act_window,help:theater_management.action_theater_events
+msgid "Schedule your first show or rehearsal!"
+msgstr "Заплануйте свою першу виставу або репетицію"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_wizard__schedule_line_ids
+msgid "Schedules"
+msgstr "Розклад"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_theater_musical_instrument_search
+msgid "Search Instruments"
+msgstr "Пошук інструмента"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_artist_search
+msgid "Search artist"
+msgstr "Пошук артиста"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_musician_search
+msgid "Search musician"
+msgstr "Пошук музиканта"
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_event_scheduler_wizard_form
+msgid "Select Dates"
+msgstr "Оберіть дати"
+
+#. module: theater_management
+#: model:ir.model.fields,help:theater_management.field_theater_artist__performer_type
+msgid "Select the primary role of the artist"
+msgstr "Оберіть основну роль артиста"
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_abstract_person__sex
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__sex
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__sex
+msgid "Sex"
+msgstr ""
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_event.py:0
+#: model:ir.model.fields.selection,name:theater_management.selection__event_event__event_type_selection__show
+#: model_terms:event.event,description:theater_management.demo_theater_event_folk_songs
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_mavka
+msgid "Show"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.actions.act_window,name:theater_management.action_theater_show_orchestra_window
+#: model:ir.ui.menu,name:theater_management.theater_menu_show_orchestra
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_show_orchestra_list
+msgid "Show Orchestra"
+msgstr ""
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_show_orchestra_form
+msgid "Show Orchestra Assignment"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model,name:theater_management.model_theater_show_role
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_show_role_form
+msgid "Show Role Assignment"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.actions.act_window,name:theater_management.action_theater_show_roles_window
+#: model:ir.ui.menu,name:theater_management.theater_menu_show_role
+#: model_terms:ir.ui.view,arch_db:theater_management.theater_show_role_list
+msgid "Show Roles"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_orchestra__event_ids
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__event_ids
+msgid "Show/Event"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.actions.act_window,name:theater_management.action_theater_events
+msgid "Shows & Rehearsals"
+msgstr ""
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_snare_drum
+msgid "Snare Drum"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_artist__performer_type__soloist
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_show_role__performer_type__soloist
+msgid "Solo Singer"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_show_role__role_name
+msgid "Specific Role"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.ui.menu,name:theater_management.theater_menu_staff
+msgid "Staff"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musical_instrument__category__strings
+msgid "Strings"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__user_id
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__user_id
+msgid "System User"
+msgstr ""
+
+#. module: theater_management
+#: model:event.tag.category,name:theater_management.theater_event_tag_category
+msgid "Theater Genre"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.ui.menu,name:theater_management.theater_main_menu
+msgid "Theater Management"
+msgstr ""
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/wizard/theater_event_scheduler_wizard.py:0
+msgid "Time slot conflict for %s! Time reserved for event: %s"
+msgstr ""
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_timpani
+msgid "Timpani"
+msgstr ""
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_trombone
+msgid "Trombone"
+msgstr ""
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_trumpet
+msgid "Trumpet"
+msgstr ""
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_tuba
+msgid "Tuba"
+msgstr ""
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_folk_songs
+msgid "Unforgettable evening with folk songs."
+msgstr ""
+
+#. module: theater_management
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_viola
+msgid "Viola"
+msgstr ""
+
+#. module: theater_management
+#: model:event.tag,name:theater_management.theater_event_tag_violin
+#: model:theater.musical.instrument,name:theater_management.theater_instrument_violin
+msgid "Violin"
+msgstr ""
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet
+#: model_terms:event.event,description:theater_management.demo_theater_event_hamlet_reh
+#: model_terms:event.event,description:theater_management.demo_theater_event_violin
+msgid "Violin: Loren Sophie"
+msgstr ""
+
+#. module: theater_management
+#: model_terms:event.event,description:theater_management.demo_theater_event_violin
+msgid "Violin: May Vanessa"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__has_actors
+msgid "With Actors"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_event_event__has_orchestra
+msgid "With Orchestra"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_event_scheduler_line__wizard_id
+msgid "Wizard"
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields.selection,name:theater_management.selection__theater_musical_instrument__category__woodwinds
+msgid "Woodwinds"
+msgstr ""
+
+#. module: theater_management
+#. odoo-python
+#: code:addons/theater_management/models/theater_abstract_person.py:0
+msgid "Wrong email format: "
+msgstr ""
+
+#. module: theater_management
+#: model:ir.model.fields,field_description:theater_management.field_theater_artist__experience
+#: model:ir.model.fields,field_description:theater_management.field_theater_musician__experience
+msgid "Years of experience"
+msgstr ""
+
+#. module: theater_management
+#: model:event.event,name:theater_management.demo_theater_event_hamlet_reh
+msgid "[REH] Hamlet"
+msgstr ""
+
+#. module: theater_management
+#: model:event.event,name:theater_management.demo_theater_event_violin
+msgid "[REH] Violin concert"
+msgstr ""
+
+#. module: theater_management
+#: model_terms:ir.ui.view,arch_db:theater_management.view_theater_musical_instrument_form
+msgid "e.g. Cello"
+msgstr ""
