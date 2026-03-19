@@ -1,8 +1,9 @@
-from datetime import date, timedelta
+from datetime import date
 from dateutil.relativedelta import relativedelta
 
 from odoo.exceptions import ValidationError
 from .common import TestTheaterManagementCommon
+
 
 class TestTheaterArtist(TestTheaterManagementCommon):
 
@@ -15,13 +16,16 @@ class TestTheaterArtist(TestTheaterManagementCommon):
 
         self.artist.joined_date = date.today() - relativedelta(years=10)
         self.artist._compute_experience()
-        self.assertEqual(self.artist.experience, 10, "Experience should be updated to 10 years.")
+        self.assertEqual(self.artist.experience, 10,
+                         msg="Experience should be updated to 10 years.")
 
     def test_02_phone_validation(self):
-        with self.assertRaises(ValidationError, msg="Should raise short number error"):
+        with self.assertRaises(ValidationError,
+                               msg="Should raise short number error"):
             self.artist.write({'phone_number': '123'})
 
-        with self.assertRaises(ValidationError, msg="Should contain numbers only"):
+        with self.assertRaises(ValidationError,
+                               msg="Should contain numbers only"):
             self.artist.write({'phone_number': '067abc4567'})
 
         self.artist.write({'phone_number': '0990001122'})

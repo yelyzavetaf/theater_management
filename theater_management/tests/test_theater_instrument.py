@@ -1,5 +1,6 @@
 from .common import TestTheaterManagementCommon
 
+
 class TestTheaterMusicalInstrument(TestTheaterManagementCommon):
 
     def test_01_instrument_creation(self):
@@ -11,5 +12,7 @@ class TestTheaterMusicalInstrument(TestTheaterManagementCommon):
 
         self.assertEqual(self.guitar.name, 'Guitar2')
         self.assertEqual(self.guitar.category, 'strings')
-        self.assertTrue(self.guitar.active, "Instrument should be active by default")
-        self.assertEqual(self.guitar.number_of_musicians, 0, "Initial count should be 0")
+        self.assertTrue(self.guitar.active,
+                        "Instrument should be active by default")
+        self.assertEqual(self.guitar.number_of_musicians, 0,
+                         "Initial count should be 0")

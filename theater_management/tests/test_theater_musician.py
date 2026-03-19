@@ -10,5 +10,6 @@ class TestTheaterMusician(TestTheaterManagementCommon):
                          "Display name should include the instrument name.")
 
     def test_02_instrument_relation(self):
-        self.assertEqual(self.guitar.number_of_musicians, 1,
-                         "The instrument's musician counter should have updated.")
+        self.assertEqual(self.guitar.number_of_musicians, 1, msg=(
+            "The instrument's musician counter should be updated."
+        ))

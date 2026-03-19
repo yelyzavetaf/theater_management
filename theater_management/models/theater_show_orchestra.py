@@ -70,10 +70,11 @@ class TheaterShowOrchestra(models.Model):
         for record in self:
             for event in record.event_ids:
                 duplicates = event.orchestra_ids.filtered(
-                    lambda m: m.musician_id == record.musician_id
-                    and m.id != record.id
+                    lambda m, rec=record: m.musician_id == rec.musician_id
+                    and m.id != rec.id
                 )
                 if duplicates:
                     raise ValidationError(_(
-                        "Musician %s is already involved in this event!"
-                    ) % record.musician_id.full_name)
+                        f"Musician {record.musician_id.full_name} is already "
+                        f"involved in this event!"
+                    ))

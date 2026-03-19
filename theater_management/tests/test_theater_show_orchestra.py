@@ -12,4 +12,5 @@ class TestTheaterShowOrchestra(TestTheaterManagementCommon):
         assignment._onchange_instrument()
         assignment.instrument_id = self.piano
         assignment._onchange_instrument()
-        self.assertFalse(assignment.musician_id, "Musician should be reset when instrument changes.")
+        self.assertFalse(assignment.musician_id,
+                         "Musician should be reset when instrument changes.")

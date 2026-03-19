@@ -14,7 +14,10 @@ class TestTheaterShowRole(TestTheaterManagementCommon):
             'event_ids': [(4, self.event.id)],
         })
 
-        with self.assertRaises(ValidationError, msg="Should raise ValidationError for duplicate artist in the same event"):
+        with self.assertRaises(ValidationError, msg=(
+                "Should raise ValidationError for duplicate "
+                "artist in the same event"
+        )):
             self.env['theater.show.role'].create({
                 'role_name': 'Ghost',
                 'performer_type': 'actor',

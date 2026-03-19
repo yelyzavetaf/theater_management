@@ -9,9 +9,9 @@
     'depends': ['base', 'event', 'website_event', 'website'],
 
     'data': [
-        # "security/hr_hospital_groups.xml",
+        "security/theater_groups.xml",
         "security/ir.model.access.csv",
-        # "security/hr_hospital_security.xml",
+        "security/theater_security.xml",
         "data/theater_musical_instrument_data.xml",
         "data/theater_event_tags_data.xml",
         "wizard/theater_event_scheduler_wizard_view.xml",

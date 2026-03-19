@@ -75,5 +75,6 @@ class TheaterShowRole(models.Model):
                 )
                 if duplicates:
                     raise ValidationError(_(
-                        "Artist %s is already assigned to this event!"
-                    ) % record.artist_id.full_name)
+                        f"Artist {record.artist_id.full_name} is "
+                        f"already assigned to this event!"
+                    ))

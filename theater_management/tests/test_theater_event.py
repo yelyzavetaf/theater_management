@@ -19,7 +19,9 @@ class TestTheaterEvent(TestTheaterManagementCommon):
         event._onchange_event_name_prefix()
 
         expected_name = f"[REH] {event_name}"
-        self.assertEqual(event.name, expected_name, "Prefix [REH] should be added for a rehealsal.")
+        self.assertEqual(event.name, expected_name,
+                         "Prefix [REH] should be added for a rehealsal.")
 
         event._onchange_event_name_prefix()
-        self.assertEqual(event.name, expected_name, "Prefix should not be duplicated.")
+        self.assertEqual(event.name, expected_name,
+                         "Prefix should not be duplicated.")
