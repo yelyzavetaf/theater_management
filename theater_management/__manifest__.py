@@ -32,5 +32,10 @@
         "demo/theater_event_demo.xml",
     ],
 
-    'images': ['static/description/banner.png', 'static/description/icon.png', 'static/img/hamlet_image.jpg', 'static/img/mavka_image.jpg', 'static/img/songs_image.jpg'],
+    'images': ['static/description/banner.png',
+               'static/description/icon.png',
+               'static/img/hamlet_image.jpg',
+               'static/img/mavka_image.jpg',
+               'static/img/songs_image.jpg'
+               ],
 }

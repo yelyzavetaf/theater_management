@@ -6,14 +6,18 @@ class TheaterMusicalInstrument(models.Model):
     _description = 'Musical Instrument'
     _order = 'name'
 
-    name = fields.Char(string="Instrument Name", required=True)
+    name = fields.Char(
+        string="Instrument Name",
+        required=True,
+        translate=True
+    )
     category = fields.Selection([
         ('strings', 'Strings'),
         ('woodwinds', 'Woodwinds'),
         ('brass', 'Brass'),
         ('percussion', 'Percussion'),
         ('keyboard', 'Keyboard')
-    ], required=True)
+    ], required=True, translate=True)
 
     active = fields.Boolean(default=True)
 

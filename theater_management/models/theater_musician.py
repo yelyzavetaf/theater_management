@@ -80,4 +80,3 @@ class TheaterMusician(models.Model):
                 'hours': round(hours, 2)
             })
         return {'events': report_lines, 'total': round(total_hours, 2)}
-

@@ -6,7 +6,11 @@ class EventSchedulerWizard(models.TransientModel):
     _name = 'theater.event.scheduler.wizard'
     _description = 'Schedule Event'
 
-    event_id = fields.Many2one(comodel_name='event.event', string="Event", required=True)
+    event_id = fields.Many2one(
+        comodel_name='event.event',
+        string="Event",
+        required=True
+    )
 
     schedule_line_ids = fields.One2many(
         comodel_name='theater.event.scheduler.line',
@@ -25,10 +29,10 @@ class EventSchedulerWizard(models.TransientModel):
             end = line.date + duration
 
             conflicts = self.env['event.event'].search([
-                            ('address_id', '=', source.address_id.id),
-                            ('date_begin', '<', end),
-                            ('date_end', '>', start),
-                        ])
+                ('address_id', '=', source.address_id.id),
+                ('date_begin', '<', end),
+                ('date_end', '>', start),
+            ])
 
             if conflicts:
                 raise ValidationError(_(
@@ -61,5 +65,8 @@ class EventSchedulerLine(models.TransientModel):
     _name = 'theater.event.scheduler.line'
     _description = 'Schedule Line'
 
-    wizard_id = fields.Many2one(comodel_name='theater.event.scheduler.wizard', ondelete='cascade')
+    wizard_id = fields.Many2one(
+        comodel_name='theater.event.scheduler.wizard',
+        ondelete='cascade'
+    )
     date = fields.Datetime(string="Date", required=True)

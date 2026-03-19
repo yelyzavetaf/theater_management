@@ -18,7 +18,7 @@
     <record id="action_report_musician_hours" model="ir.actions.report">
         <field name="name">Participation Report</field>
         <field name="model">theater.musician</field>
-        <field name="report_type">qweb-html</field>
+        <field name="report_type">qweb-pdf</field>
         <field name="report_name">theater_management.report_musician_participation</field>
         <field name="report_file">theater_management.report_musician_participation</field>
         <field name="print_report_name">'Participation - %s' % (object.full_name)</field>
@@ -26,13 +26,11 @@
         <field name="binding_type">report</field>
         <field name="paperformat_id" ref="hr_hospital.hr_hospital_doctor_visit_paperformat"/>
     </record>
-S
 
-        <template id="report_musician_participation">
+    <template id="report_musician_participation">
         <t t-call="web.html_container">
-<!--            <t t-call-assets="web.report_assets_common" t-js="false"/>-->
             <t t-foreach="docs" t-as="o">
-                <t t-call="web.external_layout">
+                <t t-call="web.basic_layout">
                     <div class="header" style="border-bottom: 2px solid black; margin-bottom: 25px;">
                         <div class="row">
                             <div class="col-3">
@@ -58,49 +56,47 @@ S
                             <table class="table mb-0" style="border-collapse: collapse; width: 100%;">
                                 <thead t-attf-style="background-color: #6283f0;">
                                     <tr>
-                                        <th style="border: 1px solid black; color: white; font-weight: bold;">Event</th>
-                                        <th style="border: 1px solid black; color: white; font-weight: bold;">Date</th>
-                                        <th style="border: 1px solid black; color: white; font-weight: bold;">Hours on stage</th>
+                                        <th class="text-center" style="border: 1px solid black; color: white; font-weight: bold;">Event</th>
+                                        <th class="text-center" style="border: 1px solid black; color: white; font-weight: bold;">Date</th>
+                                        <th class="text-center" style="border: 1px solid black; color: white; font-weight: bold;">Hours on stage</th>
                                     </tr>
                                 </thead>
-
-
                             <tbody>
                                 <t t-set="data" t-value="o.get_participation_data()"/>
                                 <t t-foreach="data['events']" t-as="line">
                                     <tr>
                                         <td style="border: 1px solid black;"><span t-esc="line['name']"/></td>
-                                        <td class="text-center" style="border: 1px solid black;"><span t-esc="line['date']" t-options='{"widget": "datetime"}'/></td>
-                                        <td class="text-center" style="border: 1px solid black;"><span t-esc="line['hours']"/></td>
-                                    </tr>
-                                </t>
-                            </tbody>
-                        </table>
-                        <div class="row justify-content-end">
-                            <div class="col-8">
-                                <table class="table table-sm">
-                                    <tr class="border-black o_total">
-                                        <td><strong>Total hours:</strong></td>
-                                        <td class="text-end">
-                                            <span t-esc="data['total']"/>
+                                        <td class="text-center" style="border: 1px solid black;">
+                                            <span t-esc="line['date']" t-options='{"widget": "datetime"}'/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;">
+                                            <span t-esc="line['hours']"/>
                                         </td>
                                     </tr>
-                                </table>
-                            </div>
-                        </div>
+                                </t>
+
+                                <tr>
+                                    <td/>
+                                    <td class="text-center" style="border: 1px solid black;">
+                                        <strong>Total hours:</strong>
+                                    </td>
+                                    <td class="text-center" style="border: 1px solid black;">
+                                        <b><span t-esc="data['total']"/></b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    </div>
+
                     <div class="footer o_standard_footer">
                         <div class="text-center" style="border-top: 1px solid black;">
                             <div class="row mt-2">
                                 <div class="col-6 text-start">
                                     <i class="fa fa-map-marker me-1"/>
-
                                     <span t-field="res_company.city"/>
                                 </div>
                                 <div class="col-6 text-end">
                                     <i class="fa fa-clock-o me-1"/>
-
                                     <span t-out="context_timestamp(datetime.datetime.now()).strftime('%d.%m.%Y %H:%M')"/>
                                 </div>
                             </div>
@@ -114,94 +110,4 @@ S
             </t>
         </t>
     </template>
-
-
-<!--    <template id="report_musician_participation">-->
-<!--        <t t-call="web.html_container">-->
-<!--            <t t-call-assets="web.report_assets_common" t-js="false"/>-->
-<!--            <t t-foreach="docs" t-as="o">-->
-<!--                <t t-call="web.basic_layout">-->
-<!--                    <div class="header" style="border-bottom: 2px solid black; margin-bottom: 25px;">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3">-->
-<!--                                <img t-if="res_company.logo" t-att-src="image_data_uri(res_company.logo)" style="max-height: 95px;"/>-->
-<!--                            </div>-->
-<!--                            <div class="col-9 text-end">-->
-<!--                                <h3 t-field="res_company.name"/>-->
-<!--                                <div><i class="fa fa-envelope me-1"/><span t-field="res_company.email" class="mb-0"/></div>-->
-<!--                                <div><i class="fa fa-phone me-1"/><span t-field="res_company.phone"/></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="page">-->
-<!--                        <div class="text-center mb-4">-->
-<!--                            <h2>Musician <span style="color: #2d3d75;" t-field="o.full_name"/></h2>-->
-<!--                            <h4 class="text-muted">Instrument: <span t-field="o.instrument_id"/></h4>-->
-<!--                        </div>-->
-<!--                        <br/>-->
-
-<!--                        <h3 style="margin-top: 35px;">Events history</h3>-->
-<!--                        <div style="border: 1px solid black; border-radius: 15px; overflow: hidden; margin-top: 10px;">-->
-<!--                            <table class="table mb-0" style="border-collapse: collapse; width: 100%;">-->
-<!--                                <thead t-attf-style="background-color: #6283f0;">-->
-<!--                                    <tr>-->
-<!--                                        <th style="border: 1px solid black; color: white; font-weight: bold;">Event</th>-->
-<!--                                        <th style="border: 1px solid black; color: white; font-weight: bold;">Date</th>-->
-<!--                                        <th style="border: 1px solid black; color: white; font-weight: bold;">Hours on stage</th>-->
-<!--                                    </tr>-->
-<!--                                </thead>-->
-
-
-<!--                            <tbody>-->
-<!--                                <t t-set="data" t-value="o.get_participation_data()"/>-->
-<!--                                <t t-foreach="data['events']" t-as="line">-->
-<!--                                    <tr>-->
-<!--                                        <td style="border: 1px solid black;"><span t-esc="line['name']"/></td>-->
-<!--                                        <td class="text-center" style="border: 1px solid black;"><span t-esc="line['date']" t-options='{"widget": "datetime"}'/></td>-->
-<!--                                        <td class="text-center" style="border: 1px solid black;"><span t-esc="line['hours']"/></td>-->
-<!--                                    </tr>-->
-<!--                                </t>-->
-<!--                            </tbody>-->
-<!--                        </table>-->
-<!--                        <div class="row justify-content-end">-->
-<!--                            <div class="col-8">-->
-<!--                                <table class="table table-sm">-->
-<!--                                    <tr class="border-black o_total">-->
-<!--                                        <td><strong>Total hours:</strong></td>-->
-<!--                                        <td class="text-end">-->
-<!--                                            <span t-esc="data['total']"/>-->
-<!--                                        </td>-->
-<!--                                    </tr>-->
-<!--                                </table>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    </div>-->
-<!--                    <div class="footer o_standard_footer">-->
-<!--                        <div class="text-center" style="border-top: 1px solid black;">-->
-<!--                            <div class="row mt-2">-->
-<!--                                <div class="col-6 text-start">-->
-<!--                                    <i class="fa fa-map-marker me-1"/>-->
-
-<!--                                    <span t-field="res_company.city"/>-->
-<!--                                </div>-->
-<!--                                <div class="col-6 text-end">-->
-<!--                                    <i class="fa fa-clock-o me-1"/>-->
-
-<!--                                    <span t-out="context_timestamp(datetime.datetime.now()).strftime('%d.%m.%Y %H:%M')"/>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-<!--                            <div class="text-muted small mt-1">-->
-<!--                                Page: <span class="page"/> / <span class="topage"/>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </t>-->
-<!--            </t>-->
-<!--        </t>-->
-<!--    </template>-->
-<!---->
-
 </odoo>
