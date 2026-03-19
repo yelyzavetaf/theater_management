@@ -1,7 +1,7 @@
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, models, fields
+from odoo import api, models, fields
 
 
 class TheaterArtist(models.Model):
@@ -9,7 +9,7 @@ class TheaterArtist(models.Model):
     Represent a performing artist within the theater management system.
 
     This model extends 'theater.abstract.person' to include specific attributes
-    for stage performers, such as their artistic specialization (acting, dancing,
+    for stage performers, such as their specialization (acting, dancing,
     singing), dance styles, and historical role assignments. It automatically
     calculates experience based on the joined date.
     """

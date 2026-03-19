@@ -4,7 +4,7 @@ from odoo.exceptions import ValidationError
 
 class TheaterShowOrchestra(models.Model):
     """
-    Manage the assignment of musicians and their instruments to specific events.
+    Manage the assignment of musicians and their instruments to events.
 
     This model acts as a bridge between events and the orchestra members,
     ensuring that each musician is assigned based on their specific instrument
@@ -36,7 +36,7 @@ class TheaterShowOrchestra(models.Model):
 
     @api.onchange('instrument_id')
     def _onchange_instrument(self):
-        """Reset the selected musician if the chosen instrument category changes."""
+        """Reset the selected musician if chosen instrument category changes"""
         self.musician_id = False
 
     @api.depends('event_ids', 'event_ids.date_begin', 'musician_id')

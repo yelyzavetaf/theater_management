@@ -4,11 +4,12 @@ from odoo.exceptions import ValidationError
 
 class TheaterShowRole(models.Model):
     """
-    Manage the assignment of specific artistic roles to performers for theater events.
+    Manage the assignment of specific artistic roles to performers
+    for theater events.
 
-    This model links artists to events based on their performance category (acting,
-    dancing, singing) and ensures that each assignment is unique per event to
-    prevent scheduling or casting conflicts.
+    This model links artists to events based on their performance category
+    (acting,dancing, singing) and ensures that each assignment is unique
+    per event to prevent scheduling or casting conflicts.
     """
     _name = 'theater.show.role'
     _description = 'Show Role Assignment'
@@ -42,7 +43,8 @@ class TheaterShowRole(models.Model):
     # Clearing artist_id if performer_type has changed
     @api.onchange('performer_type')
     def _onchange_performer_type(self):
-        """Reset the selected artist if the role category changes to ensure compatibility."""
+        """Reset the selected artist if the role category
+        changes to ensure compatibility."""
         self.artist_id = False
 
     @api.depends('artist_id', 'role_name')
@@ -60,7 +62,7 @@ class TheaterShowRole(models.Model):
     @api.constrains('artist_id', 'event_ids')
     def _check_unique_artist_per_event(self):
         """
-        Validate that an artist is not assigned to the same event more than once.
+        Validate that artist isn't assigned to same event more than once.
 
         Iterates through linked events to check for existing assignments for
         the same artist, raising a ValidationError if a duplicate is found.

@@ -100,7 +100,7 @@ class Event(models.Model):
 
     @api.onchange('has_orchestra')
     def _onchange_has_orchestra(self):
-        """Clear the orchestra list if the 'With Orchestra' flag is unchecked."""
+        """Clear the orchestra list if the 'With Orchestra' is unchecked."""
         if not self.has_orchestra:
             self.orchestra_ids = [(5, 0, 0)]
 
@@ -128,8 +128,8 @@ class Event(models.Model):
         custom details, and a bulleted list of the Cast and Orchestra members.
         """
         for record in self:
-            label = _("Rehearsal") if record.event_type_selection == 'rehearsal' \
-                else _("Show")
+            label = _("Rehearsal") \
+                if record.event_type_selection == 'rehearsal' else _("Show")
             cast_label = _("Cast:")
             orc_label = _("Orchestra:")
 

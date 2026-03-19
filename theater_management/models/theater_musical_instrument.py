@@ -1,4 +1,4 @@
-from odoo import _, api, models, fields
+from odoo import api, models, fields
 
 
 class TheaterMusicalInstrument(models.Model):
@@ -24,7 +24,7 @@ class TheaterMusicalInstrument(models.Model):
         ('brass', 'Brass'),
         ('percussion', 'Percussion'),
         ('keyboard', 'Keyboard')
-    ], required=True, translate=True)
+    ], required=True)
 
     active = fields.Boolean(default=True)
 

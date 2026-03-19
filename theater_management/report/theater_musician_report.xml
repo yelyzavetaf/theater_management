@@ -61,31 +61,32 @@
                                         <th class="text-center" style="border: 1px solid black; color: white; font-weight: bold;">Hours on stage</th>
                                     </tr>
                                 </thead>
-                            <tbody>
-                                <t t-set="data" t-value="o.get_participation_data()"/>
-                                <t t-foreach="data['events']" t-as="line">
+                                <tbody>
+                                    <t t-set="data" t-value="o.get_participation_data()"/>
+                                    <t t-foreach="data['events']" t-as="line">
+                                        <tr>
+                                            <td style="border: 1px solid black;"><span t-esc="line['name']"/></td>
+                                            <td class="text-center" style="border: 1px solid black;">
+                                                <span t-esc="line['date']" t-options='{"widget": "datetime"}'/>
+                                            </td>
+                                            <td class="text-center" style="border: 1px solid black;">
+                                                <span t-esc="line['hours']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+
                                     <tr>
-                                        <td style="border: 1px solid black;"><span t-esc="line['name']"/></td>
+                                        <td/>
                                         <td class="text-center" style="border: 1px solid black;">
-                                            <span t-esc="line['date']" t-options='{"widget": "datetime"}'/>
+                                            <strong>Total hours:</strong>
                                         </td>
                                         <td class="text-center" style="border: 1px solid black;">
-                                            <span t-esc="line['hours']"/>
+                                            <b><span t-esc="data['total']"/></b>
                                         </td>
                                     </tr>
-                                </t>
-
-                                <tr>
-                                    <td/>
-                                    <td class="text-center" style="border: 1px solid black;">
-                                        <strong>Total hours:</strong>
-                                    </td>
-                                    <td class="text-center" style="border: 1px solid black;">
-                                        <b><span t-esc="data['total']"/></b>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="footer o_standard_footer">

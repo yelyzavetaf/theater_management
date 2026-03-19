@@ -29,7 +29,7 @@ class EventSchedulerWizard(models.TransientModel):
         """
         Create event copies for each specified date after conflict validation.
 
-        Calculates duration from the source event, checks for venue (address_id)
+        Calculates duration from the source event, checks for venue(address_id)
         time slot availability, and replicates the event data including
         many-to-many artistic assignments.
 

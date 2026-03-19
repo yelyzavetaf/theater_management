@@ -1,7 +1,7 @@
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, models, fields
+from odoo import api, models, fields
 
 
 class TheaterMusician(models.Model):
@@ -65,15 +65,17 @@ class TheaterMusician(models.Model):
 
     def get_participation_data(self, date_from=False, date_to=False):
         """
-        Collect event participation details and calculate total hours for a musician.
+        Collect event participation details and calculate
+        total hours for a musician.
 
-        This method filters 'theater.show.orchestra' records within an optional
-        date range and aggregates performance/rehearsal duration.
+        This method filters 'theater.show.orchestra' records
+        within an optional date range and aggregates
+        performance/rehearsal duration.
 
         :param date_from: Start date to filter events (optional).
         :param date_to: End date to filter events (optional).
-        :return: A dictionary containing a list of event details (name, date, hours)
-                 and the grand total of hours.
+        :return: A dictionary containing a list of event details
+        (name, date, hours) and the grand total of hours.
         """
         self.ensure_one()
         # Build search domain based on musician ID and optional dates
