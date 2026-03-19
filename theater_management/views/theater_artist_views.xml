@@ -55,14 +55,12 @@
                             <field name="role_ids">
                                 <list>
                                     <field name="event_ids"/>
-<!--                                    <field name="event_ids.date_begin"/>-->
                                     <field name="performer_type"/>
                                     <field name="role_name"/>
                                 </list>
                             </field>
                         </page>
                     </notebook>
-
                 </sheet>
             </form>
         </field>

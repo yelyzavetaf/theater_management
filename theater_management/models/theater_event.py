@@ -1,8 +1,15 @@
 import json
-from odoo import models, fields, api
+from odoo import _, api, fields, models
 
 
 class Event(models.Model):
+    """
+    Extensions for the theater event management system.
+
+    Inherits from 'event.event' to add theatrical specifics like cast roles,
+    orchestra assignments, and automated HTML description generation for
+    the website.
+    """
     _name = 'event.event'
     _inherit = ['event.event', 'image.mixin']
 
@@ -41,7 +48,12 @@ class Event(models.Model):
     )
 
     def _update_cover_image(self):
-        """Update JSON cover image"""
+        """
+        Update the website cover image properties.
+
+        Converts the uploaded 'image_1920' into a JSON structure used by
+        Odoo's website cover snippet, applying opacity and background settings.
+        """
         for record in self:
             if record.image_1920:
                 vals = {
@@ -56,11 +68,19 @@ class Event(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
+        """
+        Overridden create method to automatically set the cover image
+        upon record creation.
+        """
         records = super(Event, self).create(vals_list)
         records._update_cover_image()
         return records
 
     def write(self, vals):
+        """
+        Overridden write method to refresh the website cover image
+        if the main event image is updated.
+        """
         res = super(Event, self).write(vals)
         if 'image_1920' in vals:
             self._update_cover_image()
@@ -68,22 +88,28 @@ class Event(models.Model):
 
     @api.onchange('event_type_selection')
     def _onchange_event_type_selection(self):
+        """Clear all event tickets if the event type is set to rehearsal."""
         if self.event_type_selection == 'rehearsal':
-            # Remove tickets if it's a rehearsal
             self.event_ticket_ids = [(5, 0, 0)]
 
     @api.onchange('has_actors')
     def _onchange_has_actors(self):
+        """Clear the cast list if the 'With Actors' flag is unchecked."""
         if not self.has_actors:
             self.show_role_ids = [(5, 0, 0)]
 
     @api.onchange('has_orchestra')
     def _onchange_has_orchestra(self):
+        """Clear the orchestra list if the 'With Orchestra' flag is unchecked."""
         if not self.has_orchestra:
             self.orchestra_ids = [(5, 0, 0)]
 
     @api.onchange('event_type_selection', 'name')
     def _onchange_event_name_prefix(self):
+        """
+        Manage '[REH]' prefix in event names based on selection.
+        Adds the prefix for rehearsals and removes it for shows.
+        """
         prefix = "[REH] "
         if self.event_type_selection == 'rehearsal':
             if self.name and not self.name.startswith(prefix):
@@ -95,9 +121,18 @@ class Event(models.Model):
     @api.depends('show_role_ids', 'orchestra_ids', 'event_type_selection',
                  'has_actors', 'has_orchestra')
     def _compute_description(self):
+        """
+        Compute an HTML description for the website.
+
+        Generates a formatted summary including the event type label,
+        custom details, and a bulleted list of the Cast and Orchestra members.
+        """
         for record in self:
-            label = "Rehearsal" if record.event_type_selection == 'rehearsal' \
-                else "Show"
+            label = _("Rehearsal") if record.event_type_selection == 'rehearsal' \
+                else _("Show")
+            cast_label = _("Cast:")
+            orc_label = _("Orchestra:")
+
             html = f"<section class='s_text_block pb32 pt32'><h3>{label}</h3>"
 
             if record.details:
@@ -105,7 +140,7 @@ class Event(models.Model):
 
             # Adding actors
             if record.has_actors and record.show_role_ids:
-                html += "<h5>Cast:</h5><ul>"
+                html += f"<h5>{cast_label}</h5><ul>"
                 for role in record.show_role_ids:
                     artist_name = role.artist_id.full_name
                     html += f"<li><b>{role.role_name}</b> — {artist_name}</li>"
@@ -113,7 +148,7 @@ class Event(models.Model):
 
             # Adding orchestra
             if record.has_orchestra and record.orchestra_ids:
-                html += "<h5>Orchestra:</h5><ul>"
+                html += f"<h5>{orc_label}</h5><ul>"
                 for orc in record.orchestra_ids:
                     musician_name = orc.musician_id.full_name
                     html += \

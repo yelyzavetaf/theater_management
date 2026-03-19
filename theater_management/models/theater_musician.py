@@ -5,7 +5,14 @@ from odoo import _, api, models, fields
 
 
 class TheaterMusician(models.Model):
+    """
+    Represent an orchestra musician within the theater management system.
 
+    This model extends 'theater.abstract.person' to manage orchestral staff.
+    It tracks the primary musical instrument played by the musician, their
+    tenure through the 'joined_date', and automatically calculates total
+    professional experience within the theater.
+    """
     _name = 'theater.musician'
     _description = 'Musician'
     _inherit = 'theater.abstract.person'
@@ -57,9 +64,19 @@ class TheaterMusician(models.Model):
             musician.experience = diff.years
 
     def get_participation_data(self, date_from=False, date_to=False):
-        """Метод для збору подій та годин для PDF"""
+        """
+        Collect event participation details and calculate total hours for a musician.
+
+        This method filters 'theater.show.orchestra' records within an optional
+        date range and aggregates performance/rehearsal duration.
+
+        :param date_from: Start date to filter events (optional).
+        :param date_to: End date to filter events (optional).
+        :return: A dictionary containing a list of event details (name, date, hours)
+                 and the grand total of hours.
+        """
         self.ensure_one()
-        # Шукаємо всі записи в оркестрі для цього музиканта
+        # Build search domain based on musician ID and optional dates
         domain = [('musician_id', '=', self.id)]
         if date_from:
             domain.append(('event_ids.date_begin', '>=', date_from))
@@ -72,6 +89,7 @@ class TheaterMusician(models.Model):
         report_lines = []
         total_hours = 0.0
         for event in events:
+            # Calculate duration in hours (decimal format)
             hours = (event.date_end - event.date_begin).total_seconds() / 3600
             total_hours += hours
             report_lines.append({

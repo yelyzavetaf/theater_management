@@ -5,7 +5,14 @@ from odoo import _, api, models, fields
 
 
 class TheaterArtist(models.Model):
+    """
+    Represent a performing artist within the theater management system.
 
+    This model extends 'theater.abstract.person' to include specific attributes
+    for stage performers, such as their artistic specialization (acting, dancing,
+    singing), dance styles, and historical role assignments. It automatically
+    calculates experience based on the joined date.
+    """
     _name = 'theater.artist'
     _description = 'Artist'
     _inherit = 'theater.abstract.person'

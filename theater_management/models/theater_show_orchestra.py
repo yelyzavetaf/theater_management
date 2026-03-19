@@ -3,6 +3,13 @@ from odoo.exceptions import ValidationError
 
 
 class TheaterShowOrchestra(models.Model):
+    """
+    Manage the assignment of musicians and their instruments to specific events.
+
+    This model acts as a bridge between events and the orchestra members,
+    ensuring that each musician is assigned based on their specific instrument
+    and preventing double-booking of the same artist for a single event.
+    """
     _name = 'theater.show.orchestra'
     _description = 'Orchestra Assignment'
 
@@ -29,10 +36,17 @@ class TheaterShowOrchestra(models.Model):
 
     @api.onchange('instrument_id')
     def _onchange_instrument(self):
+        """Reset the selected musician if the chosen instrument category changes."""
         self.musician_id = False
 
     @api.depends('event_ids', 'event_ids.date_begin', 'musician_id')
     def _compute_display_name(self):
+        """
+        Dynamic generation of the record's name.
+
+        Combines the event name, its start date, and the musician's full name
+        to provide a clear identification in breadcrumbs and relational fields.
+        """
         for record in self:
             if record.event_ids:
                 event_date = record.event_ids.date_begin.strftime('%Y-%m-%d')
@@ -47,6 +61,12 @@ class TheaterShowOrchestra(models.Model):
 
     @api.constrains('musician_id', 'event_ids')
     def _check_unique_musician_per_event(self):
+        """
+        Validate that a musician is not added multiple times to the same event.
+
+        Prevents data duplication and scheduling errors by checking existing
+        orchestra assignments linked to the same event.
+        """
         for record in self:
             for event in record.event_ids:
                 duplicates = event.orchestra_ids.filtered(

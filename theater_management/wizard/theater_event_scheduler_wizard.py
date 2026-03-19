@@ -3,6 +3,13 @@ from odoo.exceptions import ValidationError
 
 
 class EventSchedulerWizard(models.TransientModel):
+    """
+    Wizard for scheduling multiple occurrences of a theater event.
+
+    This transient model allows users to select several dates and
+    automatically create copies of a source event, maintaining its duration,
+    cast, and orchestra assignments while checking for venue availability.
+    """
     _name = 'theater.event.scheduler.wizard'
     _description = 'Schedule Event'
 
@@ -19,6 +26,17 @@ class EventSchedulerWizard(models.TransientModel):
     )
 
     def action_schedule(self):
+        """
+        Create event copies for each specified date after conflict validation.
+
+        Calculates duration from the source event, checks for venue (address_id)
+        time slot availability, and replicates the event data including
+        many-to-many artistic assignments.
+
+        :return: An action to open the tree view of the newly created events.
+        :raises ValidationError: If any selected time slot overlaps with
+                                 an existing event at the same venue.
+        """
         self.ensure_one()
         source = self.event_id
         duration = source.date_end - source.date_begin
@@ -62,6 +80,12 @@ class EventSchedulerWizard(models.TransientModel):
 
 
 class EventSchedulerLine(models.TransientModel):
+    """
+    Represent a single date entry for the event scheduler wizard.
+
+    Each line holds a specific start date/time used by the parent wizard
+    to generate a corresponding event record.
+    """
     _name = 'theater.event.scheduler.line'
     _description = 'Schedule Line'
 
