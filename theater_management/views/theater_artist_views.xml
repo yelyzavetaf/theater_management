@@ -84,8 +84,8 @@
     </record>
 
     <menuitem id="theater_menu_artist"
-              action="action_theater_artist_window"
-              parent="theater_menu_staff"
+              action="theater_management.action_theater_artist_window"
+              parent="theater_management.theater_menu_staff"
               name="Artists" sequence="301"/>
 
 </odoo>

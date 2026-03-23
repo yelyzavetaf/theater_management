@@ -23,13 +23,11 @@ class TheaterShowOrchestra(models.Model):
 
     instrument_id = fields.Many2one(
         comodel_name='theater.musical.instrument',
-        string="Instrument",
         required=True)
 
     # Filter musicians who play chosen instrument
     musician_id = fields.Many2one(
-        'theater.musician',
-        string="Musician",
+        comodel_name='theater.musician',
         domain="[('instrument_id', '=', instrument_id)]",
         required=True
     )
@@ -49,8 +47,7 @@ class TheaterShowOrchestra(models.Model):
         """
         for record in self:
             if record.event_ids:
-                event_date = record.event_ids.date_begin.strftime('%Y-%m-%d')
-                name = f"{record.event_ids.name} ({event_date})"
+                name = f"{record.event_ids.name}"
 
                 if record.musician_id:
                     name += f" - {record.musician_id.full_name}"
@@ -75,6 +72,6 @@ class TheaterShowOrchestra(models.Model):
                 )
                 if duplicates:
                     raise ValidationError(_(
-                        f"Musician {record.musician_id.full_name} is already "
-                        f"involved in this event!"
+                        "Musician %s is already involved in this event!",
+                        record.musician_id.full_name
                     ))

@@ -15,7 +15,6 @@ class EventSchedulerWizard(models.TransientModel):
 
     event_id = fields.Many2one(
         comodel_name='event.event',
-        string="Event",
         required=True
     )
 
@@ -54,8 +53,10 @@ class EventSchedulerWizard(models.TransientModel):
 
             if conflicts:
                 raise ValidationError(_(
-                    "Time slot conflict for %s! Time reserved for event: %s"
-                ) % (start.strftime('%d.%m %H:%M'), conflicts[0].name))
+                    "Time slot conflict for %s! Time reserved for event: %s",
+                    start.strftime('%d.%m %H:%M'),
+                    conflicts[0].name
+                ))
 
             vals = source.copy_data()[0]
 
@@ -93,4 +94,4 @@ class EventSchedulerLine(models.TransientModel):
         comodel_name='theater.event.scheduler.wizard',
         ondelete='cascade'
     )
-    date = fields.Datetime(string="Date", required=True)
+    date = fields.Datetime(required=True)

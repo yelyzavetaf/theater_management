@@ -82,8 +82,8 @@
     </record>
 
     <menuitem id="theater_menu_musician"
-              action="action_theater_musician_window"
-              parent="theater_menu_staff"
+              action="theater_management.action_theater_musician_window"
+              parent="theater_management.theater_menu_staff"
               name="Musicians" sequence="300"/>
 
 </odoo>

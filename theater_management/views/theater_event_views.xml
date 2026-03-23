@@ -58,9 +58,6 @@
             <xpath expr="//page[@name='tickets']" position="attributes">
                 <attribute name="invisible">event_type_selection == 'rehearsal'</attribute>
             </xpath>
-            <xpath expr="//header/button[@name='961']" position="attributes">
-                <attribute name="invisible">event_type_selection == 'rehearsal' or not seats_taken</attribute>
-            </xpath>
 
             <!-- Hiding not used fields-->
             <xpath expr="//field[@name='date_tz']" position="attributes">
@@ -98,8 +95,8 @@
 
     <menuitem id="theater_menu_events"
               name="Events"
-              action="action_theater_events"
-              parent="theater_main_menu"
+              action="theater_management.action_theater_events"
+              parent="theater_management.theater_main_menu"
               sequence="5"/>
 
 </odoo>

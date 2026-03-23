@@ -33,7 +33,6 @@ class TheaterShowRole(models.Model):
 
     artist_id = fields.Many2one(
         comodel_name='theater.artist',
-        string="Artist",
         domain="[('performer_type', '=', performer_type)]",
         required=True,
     )
@@ -75,6 +74,6 @@ class TheaterShowRole(models.Model):
                 )
                 if duplicates:
                     raise ValidationError(_(
-                        f"Artist {record.artist_id.full_name} is "
-                        f"already assigned to this event!"
+                        "Artist %s is already assigned to this event!",
+                        record.artist_id.full_name
                     ))

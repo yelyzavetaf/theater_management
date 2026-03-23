@@ -71,8 +71,8 @@
     </record>
 
     <menuitem id="theater_menu_musical_instrument"
-              action="action_theater_musical_instrument_window"
-              parent="theater_menu_planning"
+              action="theater_management.action_theater_musical_instrument_window"
+              parent="theater_management.theater_menu_planning"
               name="Musical Instruments" sequence="502"/>
 
 </odoo>

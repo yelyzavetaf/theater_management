@@ -83,8 +83,10 @@ class TheaterAbstractPerson(models.AbstractModel):
             if person.email:
                 email_regex = r'^[\w\.-]+@[\w\.-]+\.\w+$'
                 if not re.match(email_regex, person.email):
-                    raise ValidationError(_(f"Wrong email format: "
-                                          f"{person.email}"))
+                    raise ValidationError(_(
+                        "Wrong email format: %s",
+                        person.email
+                    ))
 
     @api.depends('birth_date')
     def _compute_age(self):

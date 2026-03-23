@@ -29,7 +29,6 @@ class Event(models.Model):
         relation='event_show_orchestra_rel',
         column1='event_id',
         column2='orc_id',
-        string="Orchestra"
     )
 
     event_type_selection = fields.Selection([
@@ -62,9 +61,10 @@ class Event(models.Model):
                     "resize_class": "o_record_has_cover cover_auto",
                     "opacity": "0.4"
                 }
-                super(Event, record).write(
-                    {'cover_properties': json.dumps(vals)}
-                )
+                record.write({
+                    'cover_properties': json.dumps(vals)
+                })
+        return True
 
     @api.model_create_multi
     def create(self, vals_list):
