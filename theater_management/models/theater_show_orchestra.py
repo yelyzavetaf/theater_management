@@ -47,7 +47,7 @@ class TheaterShowOrchestra(models.Model):
         """
         for record in self:
             if record.event_ids:
-                name = f"{record.event_ids.name}"
+                name = f"{record.event_ids[0].name}"
 
                 if record.musician_id:
                     name += f" - {record.musician_id.full_name}"
